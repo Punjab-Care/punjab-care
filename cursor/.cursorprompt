@@ -1,0 +1,16 @@
+You are working on the PunjabCare Flood Relief App.
+
+Project Details:
+- Frontend: React + JavaScript + Tailwind CSS
+- Backend: Firebase Firestore (No authentication)
+- Mobile-first layout only (no desktop breakpoints)
+- Users can submit requests, view requests, and see helplines
+- Session-based "My Requests" stored in localStorage
+- Keep code clean, modular, and reusable
+
+Cursor should:
+- Suggest React + Tailwind patterns
+- Help with Firebase integration
+- Keep track of existing components and folder structure
+- Suggest improvements without breaking mobile-first principle
+- Remember project context for all future prompts
