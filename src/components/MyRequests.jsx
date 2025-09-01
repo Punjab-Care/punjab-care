@@ -32,6 +32,10 @@ const MyRequests = () => {
   // ---------------- Helper: Build Firestore Query ----------------
   const buildQuery = useCallback((isLoadMore = false) => {
     const sessionId = getSessionId();
+
+    if(!sessionId) {
+      throw new Error('Session ID not found. Cannot fetch you requests');
+    }
     const constraints = [where('sessionId', '==', sessionId)];
 
     if (statusFilter !== 'all') {
@@ -101,6 +105,7 @@ const MyRequests = () => {
       setLoading(false);
       setLoadingMore(false);
     }
+    
   }, [buildQuery, statusFilter, cache]);
 
   // ---------------- Update Request Status ----------------
@@ -169,7 +174,7 @@ const MyRequests = () => {
   const retryFetch = () => { setError(null); fetchMyRequests(); };
 
   // ---------------- Initial Fetch ----------------
-  useEffect(() => { fetchMyRequests(); }, [statusFilter]);
+  useEffect(() => { fetchMyRequests(); }, [statusFilter, getSessionId]);
 
   // ---------------- Render ----------------
   if (loading) return (
@@ -249,18 +254,8 @@ const MyRequests = () => {
             </div>
           ))}
 
-          {/* Load More */}
-          {hasMore && (
-            <div className="text-center pt-4">
-              <button
-                onClick={loadMore}
-                disabled={loadingMore}
-                className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 disabled:opacity-50"
-              >
-                {loadingMore ? t('loading') : t('loadMore')}
-              </button>
-            </div>
-          )}
+        
+          
         </div>
       )}
     </div>

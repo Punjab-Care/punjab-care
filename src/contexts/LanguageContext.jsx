@@ -114,6 +114,7 @@ const translations = {
     
     // Home Page
     welcome: 'ਪੰਜਾਬ ਇਕੱਠਾ ਖੜ੍ਹਾ ਹੈ',
+
     welcomeMessage: 'ਜੇ ਕਰ ਤੁਹਾਨੂੰ ਮਦਦ ਦੀ ਲੋੜ ਹੈ ਜਾਂ ਤੁਸੀਂ ਮਦਦ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ ਤਾਂ ਹੇਠਾਂ ਦਿੱਤੇ ਬਟਨਾਂ ਰਾਹੀਂ ਸਹਾਇਤਾ ਪ੍ਰਾਪਤ ਜਾਂ ਪਹੁੰਚਾ ਸਕਦੇ ਹੋ !',
     getHelpNow: 'ਸਹਾਇਤਾ ਪ੍ਰਾਪਤ ਕਰੋ',
     viewHelplines: 'ਸੰਪਰਕ ਕਰਨ ਲਈ',
@@ -124,22 +125,22 @@ const translations = {
     
     // Request Help Form
     name: 'ਨਾਮ',
-    location: 'ਟਿਕਾਣਾ',
+    location: 'ਪਤਾ',
     contactNumber: 'ਸੰਪਰਕ ਨੰਬਰ',
-    typeOfHelp: 'ਮਦਦ ਦੀ ਕਿਸਮ',
-    description: 'ਵੇਰਵਾ',
+    typeOfHelp: 'ਕਿਸ ਪ੍ਰਕਾਰ ਦੀ ਸਹਾਇਤਾ ਦੀ ਲੋੜ ਹੈ',
+    description: 'ਵਿਸਤਾਰ ਵਿੱਚ ਦੱਸੋ',
     submit: 'ਜਮ੍ਹਾਂ ਕਰੋ',
-    getLocation: 'ਮੇਰਾ ਟਿਕਾਣਾ ਪ੍ਰਾਪਤ ਕਰੋ',
+    getLocation: 'ਮੇਰਾ ਪਤਾ ਪ੍ਰਾਪਤ ਕਰੋ',
     
     // Form Validation
     nameRequired: 'ਨਾਮ ਲੋੜੀਂਦਾ ਹੈ',
-    locationRequired: 'ਟਿਕਾਣਾ ਲੋੜੀਂਦਾ ਹੈ',
+    locationRequired: 'ਪਤਾ ਲੋੜੀਂਦਾ ਹੈ',
     contactNumberRequired: 'ਸੰਪਰਕ ਨੰਬਰ ਲੋੜੀਂਦਾ ਹੈ',
-    typeOfHelpRequired: 'ਕਿਰਪਾ ਕਰਕੇ ਮਦਦ ਦੀ ਕਿਸਮ ਚੁਣੋ',
+    typeOfHelpRequired: 'ਕਿਰਪਾ ਕਰਕੇ ਸਹਾਇਤਾ ਦੀ ਕਿਸਮ ਚੁਣੋ',
     descriptionRequired: 'ਵੇਰਵਾ ਲੋੜੀਂਦਾ ਹੈ',
     
     // Help Types
-    medical: 'ਮੈਡੀਕਲ',
+    medical: 'ਮੈਡੀਕਲ/ਡਾਕਟਰੀ',
     food: 'ਭੋਜਨ',
     shelter: 'ਆਸਰਾ',
     emergencyTransport: 'ਐਮਰਜੈਂਸੀ ਟ੍ਰਾਂਸਪੋਰਟ',
@@ -161,7 +162,7 @@ const translations = {
     availableHours: 'ਉਪਲਬਧ ਘੰਟੇ',
     
     // Request Details
-    clickToViewDetails: 'ਵੇਰਵੇ ਦੇਖਣ ਲਈ ਕਲਿਕ ਕਰੋ',
+    clickToViewDetails: 'ਵਿਸਤਾਰ ਵਿੱਚ ਦੇਖਣ ਲਈ ਕਲਿਕ ਕਰੋ',
     loadMore: 'ਹੋਰ ਲੋਡ ਕਰੋ',
     loadAll: 'ਸਭ ਲੋਡ ਕਰੋ',
     noRequests: 'ਕੋਈ ਬੇਨਤੀ ਨਹੀਂ ਮਿਲੀ',
@@ -180,7 +181,7 @@ const translations = {
     error: 'ਗਲਤੀ',
     permissionDenied: 'ਅਧਿਕਾਰ ਤੋਂ ਇਨਕਾਰ। ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੀ Firebase ਕਨਫਿਗਰੇਸ਼ਨ ਚੈਕ ਕਰੋ।',
     serviceUnavailable: 'ਸੇਵਾ ਅਸਥਾਈ ਤੌਰ ਤੇ ਉਪਲਬਧ ਨਹੀਂ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਬਾਅਦ ਵਿੱਚ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।',
-    unauthenticated: 'ਪ੍ਰਮਾਣੀਕਰਨ ਲੋੜੀਂਦਾ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਪੇਜ ਨੂੰ ਰੀਫ੍ਰੈਸ਼ ਕਰੋ।',
+    unauthenticated: 'ਪ੍ਰਮਾਣੀਕਰਨ ਲੋੜੀਂਦਾ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਪੇਜ ਨੂੰ ਦੁਬਾਰਾ ਚਲਾਓ।',
     
     // Messages
     requestSubmitted: 'ਬੇਨਤੀ ਸਫਲਤਾਪੂਰਵਕ ਜਮ੍ਹਾਂ ਕੀਤੀ ਗਈ ਹੈ',

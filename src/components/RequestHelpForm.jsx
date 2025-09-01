@@ -3,6 +3,7 @@ import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getSessionId } from '../utils/session';
+import toast from 'react-hot-toast';
 
 const RequestHelpForm = () => {
   const { t } = useLanguage();
@@ -12,6 +13,7 @@ const RequestHelpForm = () => {
     contactNumber: '',
     typeOfHelp: '',
     description: ''
+    // coordinates is added by getLocation when available
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState('');
@@ -24,6 +26,7 @@ const RequestHelpForm = () => {
     { value: 'emergencyTransport', label: t('emergencyTransport') }
   ];
 
+  // Generic input handler (keeps your original behaviour)
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -32,10 +35,11 @@ const RequestHelpForm = () => {
     }));
   };
 
+  // Your original getLocation logic — unchanged except using the same setMessage/timeouts you used
   const getLocation = async () => {
     try {
       if (!navigator.geolocation) {
-        throw new Error('Geolocation is not supported by your browser');
+        throw new Error('Geolocation is not supported by your browser, please fill the detil manually');
       }
 
       // Show loading message immediately
@@ -137,6 +141,7 @@ const RequestHelpForm = () => {
       }));
       
       setMessage(t('locationFetched'));
+      // keep the UI message short-lived as before
       setTimeout(() => setMessage(''), 3000);
       
     } catch (error) {
@@ -157,39 +162,40 @@ const RequestHelpForm = () => {
     }
   };
 
+  // VALIDATION: returns { valid: boolean, error: string|null } — avoids race with setState
   const validateForm = () => {
-    if (!formData.name.trim()) {
-      setError(t('nameRequired'));
-      return false;
+    if (!formData.location || !formData.location.trim()) {
+      return { valid: false, error: t('locationRequired') };
     }
-    if (!formData.location.trim()) {
-      setError(t('locationRequired'));
-      return false;
+
+    // Indian mobile validation: must start with 6-9 and be 10 digits
+    const phoneRegex = /^[6-9]\d{9}$/;
+    if (!phoneRegex.test(formData.contactNumber))  {
+      // add t('invalidContactNumber') in your translations for i18n
+      return { valid: false, error: t('invalidContactNumber') || 'Invalid Contact Number. Please enter a 10-digit Indian mobile number.' };
     }
-    if (!formData.contactNumber.trim()) {
-      setError(t('contactNumberRequired'));
-      return false;
-    }
+  
     if (!formData.typeOfHelp) {
-      setError(t('typeOfHelpRequired'));
-      return false;
+      return { valid: false, error: t('typeOfHelpRequired') };
     }
-    if (!formData.description.trim()) {
-      setError(t('descriptionRequired'));
-      return false;
-    }
-    return true;
+
+    return { valid: true, error: null };
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Clear previous errors
+    // Clear previous errors/messages
     setError(null);
     setMessage('');
 
-    // Validate form
-    if (!validateForm()) {
+    const { valid, error: validationError } = validateForm();
+    if (!valid) {
+      setError(validationError);
+      // show toast + top error box
+      toast.error(validationError);
+      // clear error after 5s
+      setTimeout(() => setError(null), 5000);
       return;
     }
 
@@ -197,7 +203,7 @@ const RequestHelpForm = () => {
 
     try {
       const sessionId = getSessionId();
-      console.log('Session ID:', sessionId); // Debug log
+      
       
       const requestData = {
         ...formData,
@@ -206,13 +212,15 @@ const RequestHelpForm = () => {
         status: 'pending'
       };
 
-      console.log('Submitting request data:', requestData); // Debug log
-
+    
       // Create new request
       const docRef = await addDoc(collection(db, 'requests'), requestData);
-      console.log('Request submitted successfully with ID:', docRef.id); // Debug log
+
       
-      setMessage(t('requestSubmitted'));
+      // show both toast and message
+      const successMsg = t('requestSubmitted') || 'Request submitted';
+      setMessage(successMsg);
+      toast.success(successMsg);
 
       // Reset form
       setFormData({
@@ -222,34 +230,36 @@ const RequestHelpForm = () => {
         typeOfHelp: '',
         description: ''
       });
-    } catch (error) {
-      console.error('Request submission error:', error);
+
+      // clear success message after 3s
+      setTimeout(() => setMessage(''), 3000);
+
+    } catch (err) {
+      console.error('Request submission error:', err);
       console.error('Error details:', {
-        code: error.code,
-        message: error.message,
-        stack: error.stack
+        code: err.code,
+        message: err.message,
+        stack: err.stack
       });
       
-      // Provide more specific error messages
-      if (error.code === 'permission-denied') {
-        setError(t('permissionDenied'));
-      } else if (error.code === 'unavailable') {
-        setError(t('serviceUnavailable'));
-      } else if (error.code === 'unauthenticated') {
-        setError(t('unauthenticated'));
+      // Provide more specific error messages (as you had)
+      let errMsg;
+      if (err.code === 'permission-denied') {
+        errMsg = t('permissionDenied');
+      } else if (err.code === 'unavailable') {
+        errMsg = t('serviceUnavailable');
+      } else if (err.code === 'unauthenticated') {
+        errMsg = t('unauthenticated');
       } else {
-        setError(`${t('errorSubmitting')}: ${error.message}`);
+        errMsg = `${t('errorSubmitting') || 'Error submitting request'}: ${err.message}`;
       }
+
+      setError(errMsg);
+      toast.error(errMsg);
+      // clear error after 5s
+      setTimeout(() => setError(null), 5000);
     } finally {
       setIsSubmitting(false);
-      // Clear error after 5 seconds
-      if (error) {
-        setTimeout(() => setError(null), 5000);
-      }
-      // Clear success message after 3 seconds
-      if (message) {
-        setTimeout(() => setMessage(''), 3000);
-      }
     }
   };
 
@@ -257,7 +267,7 @@ const RequestHelpForm = () => {
     <div className="p-4">
       <h2 className="text-xl font-semibold mb-4">{t('requestHelp')}</h2>
       
-      {/* Error Display */}
+      {/* Top Error Display (your custom errors only) */}
       {error && (
         <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-md">
           <div className="font-medium">{t('error')}</div>
@@ -265,14 +275,15 @@ const RequestHelpForm = () => {
         </div>
       )}
       
-      {/* Success Message */}
+      {/* Success Message (kept as before) */}
       {message && (
         <div className="mb-4 p-3 bg-green-100 text-green-700 rounded-md">
           {message}
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      {/* NOTE: noValidate prevents browser native validation popups */}
+      <form onSubmit={handleSubmit} className="space-y-4" noValidate>
         <div>
           <label className="block text-sm font-medium mb-1">{t('name')}</label>
           <input
@@ -280,7 +291,6 @@ const RequestHelpForm = () => {
             name="name"
             value={formData.name}
             onChange={handleInputChange}
-            required
             className="w-full p-3 border border-gray-300 rounded-md"
             placeholder={t('name')}
           />
@@ -294,7 +304,6 @@ const RequestHelpForm = () => {
               name="location"
               value={formData.location}
               onChange={handleInputChange}
-              required
               className="flex-1 p-3 border border-gray-300 rounded-md"
               placeholder={t('location')}
             />
@@ -312,12 +321,17 @@ const RequestHelpForm = () => {
           <label className="block text-sm font-medium mb-1">{t('contactNumber')}</label>
           <input
             type="tel"
+            inputMode="numeric"
             name="contactNumber"
             value={formData.contactNumber}
-            onChange={handleInputChange}
-            required
+            onChange={(e) => {
+              // enforce digits only and max length 10
+              const onlyNums = e.target.value.replace(/\D/g, "").slice(0, 10);
+              setFormData(prev => ({ ...prev, contactNumber: onlyNums }));
+            }}
+            maxLength="10"
             className="w-full p-3 border border-gray-300 rounded-md"
-            placeholder={t('contactNumber')}
+            placeholder={t('Enter 10-digit contact number')}
           />
         </div>
 
@@ -327,7 +341,6 @@ const RequestHelpForm = () => {
             name="typeOfHelp"
             value={formData.typeOfHelp}
             onChange={handleInputChange}
-            required
             className="w-full p-3 border border-gray-300 rounded-md"
           >
             <option value="">{t('typeOfHelp')}</option>
@@ -345,7 +358,6 @@ const RequestHelpForm = () => {
             name="description"
             value={formData.description}
             onChange={handleInputChange}
-            required
             rows="4"
             className="w-full p-3 border border-gray-300 rounded-md"
             placeholder={t('description')}

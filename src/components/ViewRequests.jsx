@@ -235,12 +235,7 @@ const ViewRequests = () => {
               >
                 {loadingMore ? t('loading') : t('loadMore')}
               </button>
-              <button
-                onClick={loadAllRequests}
-                className="flex-1 bg-gray-500 text-white py-2 rounded-md"
-              >
-                {t('loadAll')}
-              </button>
+              
             </div>
           )}
         </div>

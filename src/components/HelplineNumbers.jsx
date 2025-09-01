@@ -2,44 +2,15 @@ import { useState, useEffect } from 'react';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../firebase';
 import { useLanguage } from '../contexts/LanguageContext';
+import districts from '../data/districts';
 
 const HelplineNumbers = () => {
   const { t } = useLanguage();
   const [selectedDistrict, setSelectedDistrict] = useState('');
   const [helplines, setHelplines] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [districts, setDistricts] = useState([]);
 
-  // Punjab districts
-  const punjabDistricts = [
-    'Amritsar',
-    'Barnala',
-    'Bathinda',
-    'Faridkot',
-    'Fatehgarh Sahib',
-    'Ferozepur',
-    'Gurdaspur',
-    'Hoshiarpur',
-    'Jalandhar',
-    'Kapurthala',
-    'Ludhiana',
-    'Mansa',
-    'Moga',
-    'Muktsar',
-    'Pathankot',
-    'Patiala',
-    'Rupnagar',
-    'S.A.S. Nagar (Mohali)',
-    'Sangrur',
-    'Shahid Bhagat Singh Nagar',
-    'Tarn Taran'
-  ];
-
-  useEffect(() => {
-    // Set districts on component mount
-    setDistricts(punjabDistricts);
-  }, []);
-
+  // Fetch helplines for selected district
   const fetchHelplinesByDistrict = async (district) => {
     if (!district) {
       setHelplines([]);
@@ -48,18 +19,17 @@ const HelplineNumbers = () => {
 
     setLoading(true);
     try {
-      // Fetch helplines for the selected district
       const helplinesQuery = query(
-        collection(db, 'helplines'),
+        collection(db, 'helplinenumbers'), // single collection
         where('district', '==', district)
       );
-      
       const snapshot = await getDocs(helplinesQuery);
+
       const helplineData = snapshot.docs.map(doc => ({
         id: doc.id,
         ...doc.data()
       }));
-      
+
       setHelplines(helplineData);
     } catch (error) {
       console.error('Error fetching helplines:', error);
@@ -69,40 +39,46 @@ const HelplineNumbers = () => {
     }
   };
 
+  // Handle district change
   const handleDistrictChange = (district) => {
     setSelectedDistrict(district);
     fetchHelplinesByDistrict(district);
   };
 
+  // Card component
   const HelplineCard = ({ helpline }) => (
     <div className="border border-gray-200 rounded-md p-4 bg-white shadow-sm">
       <div className="flex justify-between items-start mb-2">
         <div className="font-semibold text-gray-900">{helpline.name}</div>
-        <span className={`px-2 py-1 text-xs rounded-full ${
-          helpline.type === 'government' 
-            ? 'bg-blue-100 text-blue-800' 
-            : 'bg-green-100 text-green-800'
-        }`}>
-          {helpline.type === 'government' ? t('government') : t('ngo')}
+        <span
+          className={`px-2 py-1 text-xs rounded-full ${
+            helpline.type === 'government'
+              ? 'bg-blue-100 text-blue-800'
+              : helpline.type === 'gurudwara'
+              ? 'bg-yellow-100 text-yellow-800'
+              : 'bg-green-100 text-green-800'
+          }`}
+        >
+          {helpline.type === 'government'
+            ? t('government')
+            : helpline.type === 'gurudwara'
+            ? t('gurudwara')
+            : t('ngo')}
         </span>
       </div>
-      
       <div className="text-blue-600 font-medium mb-2">
         <a href={`tel:${helpline.phone}`} className="hover:underline">
           {helpline.phone}
         </a>
       </div>
-      
       {helpline.description && (
         <div className="text-sm text-gray-600 mb-2">{helpline.description}</div>
       )}
-      
       {helpline.address && (
         <div className="text-sm text-gray-500">
           <strong>{t('address')}:</strong> {helpline.address}
         </div>
       )}
-      
       {helpline.availableHours && (
         <div className="text-sm text-gray-500 mt-1">
           <strong>{t('availableHours')}:</strong> {helpline.availableHours}
@@ -111,10 +87,17 @@ const HelplineNumbers = () => {
     </div>
   );
 
+  // Group helplines by type
+  const groupedHelplines = {
+    ngo: helplines.filter(h => h.type === 'ngo'),
+    gurudwara: helplines.filter(h => h.type === 'gurudwara'),
+    government: helplines.filter(h => h.type === 'government')
+  };
+
   return (
     <div className="p-4">
       <h2 className="text-xl font-semibold mb-4">{t('helplineNumbers')}</h2>
-      
+
       {/* District Selection */}
       <div className="mb-6">
         <label className="block text-sm font-medium mb-2 text-gray-700">
@@ -126,51 +109,52 @@ const HelplineNumbers = () => {
           className="w-full p-3 border border-gray-300 rounded-md bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         >
           <option value="">{t('selectDistrict')}</option>
-          {districts.map((district) => (
-            <option key={district} value={district}>
-              {district}
+          {districts.map(d => (
+            <option key={d.district} value={d.district}>
+              {d.district} / {d.district_punjabi}
             </option>
           ))}
         </select>
       </div>
 
       {/* Helplines Display */}
-      {selectedDistrict && (
+      {selectedDistrict ? (
         <div>
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg font-semibold text-gray-900">
-              {t('helplinesFor')} {selectedDistrict}
-            </h3>
-            {loading && (
-              <div className="text-sm text-gray-500">{t('loading')}</div>
-            )}
-          </div>
-
           {loading ? (
-            <div className="text-center py-8">
-              <div className="text-gray-500">{t('loading')}</div>
-            </div>
+            <div className="text-center py-8 text-gray-500">{t('loading')}</div>
           ) : helplines.length === 0 ? (
-            <div className="text-center py-8">
-              <div className="text-gray-500 mb-2">{t('noHelplinesFound')}</div>
-              <div className="text-sm text-gray-400">{t('noHelplinesMessage')}</div>
-            </div>
+            <div className="text-center py-8 text-gray-500">{t('noHelplinesFound')}</div>
           ) : (
-            <div className="space-y-4">
-              {helplines.map((helpline) => (
-                <HelplineCard key={helpline.id} helpline={helpline} />
-              ))}
+            <div className="space-y-6">
+              {groupedHelplines.ngo.length > 0 && (
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">{t('ngo')}</h3>
+                  <div className="space-y-4">
+                    {groupedHelplines.ngo.map(hl => <HelplineCard key={hl.id} helpline={hl} />)}
+                  </div>
+                </div>
+              )}
+              {groupedHelplines.gurudwara.length > 0 && (
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">{t('gurudwara')}</h3>
+                  <div className="space-y-4">
+                    {groupedHelplines.gurudwara.map(hl => <HelplineCard key={hl.id} helpline={hl} />)}
+                  </div>
+                </div>
+              )}
+              {groupedHelplines.government.length > 0 && (
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">{t('government')}</h3>
+                  <div className="space-y-4">
+                    {groupedHelplines.government.map(hl => <HelplineCard key={hl.id} helpline={hl} />)}
+                  </div>
+                </div>
+              )}
             </div>
           )}
         </div>
-      )}
-
-      {/* Instructions when no district is selected */}
-      {!selectedDistrict && (
-        <div className="text-center py-8">
-          <div className="text-gray-500 mb-2">{t('selectDistrictToView')}</div>
-          <div className="text-sm text-gray-400">{t('selectDistrictMessage')}</div>
-        </div>
+      ) : (
+        <div className="text-center py-8 text-gray-500">{t('selectDistrictToView')}</div>
       )}
     </div>
   );

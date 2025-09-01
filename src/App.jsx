@@ -6,6 +6,7 @@ import HelplineNumbers from './components/HelplineNumbers';
 import ViewRequests from './components/ViewRequests';
 import MyRequests from './components/MyRequests';
 import './App.css';
+import { Toaster } from "react-hot-toast"
 
 
 let ownerId = localStorage.getItem("ownerId");
@@ -57,6 +58,7 @@ const AppContent = () => {
         return <HomePage onNavigate={handleNavigation} />;
       case 'request':
         return <RequestHelpForm />;
+        <Toaster posotion="top-center" reverseOrder={false} />
       case 'helpline':
         return <HelplineNumbers />;
       case 'view':
