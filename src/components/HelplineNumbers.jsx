@@ -2,15 +2,15 @@ import { useState, useEffect } from 'react';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../firebase';
 import { useLanguage } from '../contexts/LanguageContext';
-import districts from '../data/districts';
+import districts from '../../data/districts';
 
 const HelplineNumbers = () => {
-  const { t } = useLanguage();
+  const { t, selectedLanguage } = useLanguage(); // language context
   const [selectedDistrict, setSelectedDistrict] = useState('');
   const [helplines, setHelplines] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // Fetch helplines for selected district
+  // Fetch helplines for selected district & language
   const fetchHelplinesByDistrict = async (district) => {
     if (!district) {
       setHelplines([]);
@@ -19,10 +19,13 @@ const HelplineNumbers = () => {
 
     setLoading(true);
     try {
+      const districtField = selectedLanguage === 'pa' ? 'district.pa' : 'district.en';
+
       const helplinesQuery = query(
-        collection(db, 'helplinenumbers'), // single collection
-        where('district', '==', district)
+        collection(db, 'helplines'), // make sure collection name matches
+        where(districtField, '==', district)
       );
+
       const snapshot = await getDocs(helplinesQuery);
 
       const helplineData = snapshot.docs.map(doc => ({
@@ -39,17 +42,22 @@ const HelplineNumbers = () => {
     }
   };
 
-  // Handle district change
+  // Fetch helplines whenever district or language changes
+  useEffect(() => {
+    if (selectedDistrict) {
+      fetchHelplinesByDistrict(selectedDistrict);
+    }
+  }, [selectedDistrict, selectedLanguage]);
+
   const handleDistrictChange = (district) => {
     setSelectedDistrict(district);
-    fetchHelplinesByDistrict(district);
   };
 
   // Card component
   const HelplineCard = ({ helpline }) => (
     <div className="border border-gray-200 rounded-md p-4 bg-white shadow-sm">
       <div className="flex justify-between items-start mb-2">
-        <div className="font-semibold text-gray-900">{helpline.name}</div>
+        <div className="font-semibold text-gray-900">{helpline.name[selectedLanguage]}</div>
         <span
           className={`px-2 py-1 text-xs rounded-full ${
             helpline.type === 'government'
@@ -66,19 +74,23 @@ const HelplineNumbers = () => {
             : t('ngo')}
         </span>
       </div>
+
       <div className="text-blue-600 font-medium mb-2">
-        <a href={`tel:${helpline.phone}`} className="hover:underline">
-          {helpline.phone}
+        <a href={`tel:${helpline.contactNumber}`} className="hover:underline">
+          {helpline.contactNumber}
         </a>
       </div>
+
       {helpline.description && (
-        <div className="text-sm text-gray-600 mb-2">{helpline.description}</div>
+        <div className="text-sm text-gray-600 mb-2">{helpline.description[selectedLanguage]}</div>
       )}
+
       {helpline.address && (
         <div className="text-sm text-gray-500">
-          <strong>{t('address')}:</strong> {helpline.address}
+          <strong>{t('address')}:</strong> {helpline.address[selectedLanguage]}
         </div>
       )}
+
       {helpline.availableHours && (
         <div className="text-sm text-gray-500 mt-1">
           <strong>{t('availableHours')}:</strong> {helpline.availableHours}
@@ -110,7 +122,10 @@ const HelplineNumbers = () => {
         >
           <option value="">{t('selectDistrict')}</option>
           {districts.map(d => (
-            <option key={d.district} value={d.district}>
+            <option
+              key={d.district}
+              value={selectedLanguage === 'pa' ? d.district_punjabi : d.district}
+            >
               {d.district} / {d.district_punjabi}
             </option>
           ))}

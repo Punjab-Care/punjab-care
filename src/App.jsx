@@ -85,10 +85,12 @@ const AppContent = () => {
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setCurrentPage('home')}
-                className="text-blue-600 hover:text-blue-800 font-medium text-2xl"
-                aria-label="Back to home"
+                              aria-label="Back to home"
               >
-                ←
+                {<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-8 text-blue-500">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                  </svg>
+                  }
               </button>
             </div>
             <LanguageToggle />
