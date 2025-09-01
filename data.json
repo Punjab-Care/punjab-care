@@ -1,98 +1,226 @@
 [
   {
-    "district": { "en": "Ropar", "pa": "ਰੋਪੜ" },
-    "type": { "en": "Gurudwara", "pa": "ਗੁਰਦੁਆਰਾ" },
-    "name": { "en": "Takhat Sri Kesgarh Sahib Sri Anandpur Sahib", "pa": "ਟਖਤ ਸ੍ਰੀ ਕੇਸਗੜ ਸਾਹਿਬ ਸ੍ਰੀ ਅਨੰਦਪੁਰ ਸਾਹਿਬ (ਰੋਪੜ)" },
-    "contactNumber": "8437008002"
+    "district": "Ropar",
+    "orgName": "Takhat Sri Kesgarh Sahib Sri Anandpur Sahib",
+    "contact": "8437008002",
+    "language": {
+      "en": {
+        "orgName": "Takhat Sri Kesgarh Sahib Sri Anandpur Sahib",
+        "district": "Ropar"
+      },
+      "pa": {
+        "orgName": "ਟਖਤ ਸ੍ਰੀ ਕੇਸਗੜ ਸਾਹਿਬ ਸ੍ਰੀ ਅਨੰਦਪੁਰ ਸਾਹਿਬ (ਰੋਪੜ)",
+        "district": "ਰੋਪੜ"
+      }
+    },
+    "isStateWide": false
   },
   {
-    "district": { "en": "Patiala", "pa": "ਪਟਿਆਲਾ" },
-    "type": { "en": "Gurudwara", "pa": "ਗੁਰਦੁਆਰਾ" },
-    "name": { "en": "Gurdwara Shri Dukhniwaran Sahib Pa: New", "pa": "ਗ: ਸ੍ਰੀ ਦੁਖਨਿਵਾਰਨ ਸਾਹਿਬ ਪਾ:ਨਵੀਂ" },
-    "contactNumber": "8437008007"
+    "district": "Patiala",
+    "orgName": "Gurdwara Shri Dukhniwaran Sahib Pa: New",
+    "contact": "8437008007",
+    "language": {
+      "en": {
+        "orgName": "Gurdwara Shri Dukhniwaran Sahib Pa: New",
+        "district": "Patiala"
+      },
+      "pa": {
+        "orgName": "ਗ: ਸ੍ਰੀ ਦੁਖਨਿਵਾਰਨ ਸਾਹਿਬ ਪਾ:ਨਵੀਂ",
+        "district": "ਪਟਿਆਲਾ"
+      }
+    },
+    "isStateWide": false
   },
   {
-    "district": { "en": "Kupwara", "pa": "ਕੁਪਵਾਰਾ" },
-    "type": { "en": "Gurudwara", "pa": "ਗੁਰਦੁਆਰਾ" },
-    "name": { "en": "Gurdwara Shri Ber Sahib Sultanpur Lopi", "pa": "ਗੁ: ਸ੍ਰੀ ਬੇਰ ਸਾਹਿਬ ਸੁਲਤਾਨਪੁਰ ਲੋਪੀ" },
-    "contactNumber": "8437008011"
+    "district": "Kupwara",
+    "orgName": "Gurdwara Shri Ber Sahib Sultanpur Lopi",
+    "contact": "8437008011",
+    "language": {
+      "en": {
+        "orgName": "Gurdwara Shri Ber Sahib Sultanpur Lopi",
+        "district": "Kupwara"
+      },
+      "pa": {
+        "orgName": "ਗੁ: ਸ੍ਰੀ ਬੇਰ ਸਾਹਿਬ ਸੁਲਤਾਨਪੁਰ ਲੋਪੀ",
+        "district": "ਕੁਪਵਾਰਾ"
+      }
+    },
+    "isStateWide": false
   },
   {
-    "district": { "en": "Amritsar", "pa": "ਅੰਮ੍ਰਿਤਸਰ" },
-    "type": { "en": "Gurudwara", "pa": "ਗੁਰਦੁਆਰਾ" },
-    "name": { "en": "Gurdwara Patshahi New", "pa": "ਗੁ: ਪਾਤਸ਼ਾਹੀ ਨਵੀਂ, ਬਾਬਾ ਬਕਾਲਾ" },
-    "contactNumber": "8437008016"
+    "district": "Amritsar",
+    "orgName": "Gurdwara Patshahi New",
+    "contact": "8437008016",
+    "language": {
+      "en": {
+        "orgName": "Gurdwara Patshahi New",
+        "district": "Amritsar"
+      },
+      "pa": {
+        "orgName": "ਗੁ: ਪਾਤਸ਼ਾਹੀ ਨਵੀਂ, ਬਾਬਾ ਬਕਾਲਾ",
+        "district": "ਅੰਮ੍ਰਿਤਸਰ"
+      }
+    },
+    "isStateWide": false
   },
   {
-    "district": { "en": "Taran Taran", "pa": "ਤਰਨ ਤਾਰਨ" },
-    "type": { "en": "Gurudwara", "pa": "ਗੁਰਦੁਆਰਾ" },
-    "name": { "en": "Gurdwara Shri Bauli Sahib, Goindwal", "pa": "ਗੁ: ਸ੍ਰੀ ਬਾਊਲੀ ਸਾਹਿਬ, ਗੋਇੰਦਵਾਲ" },
-    "contactNumber": "8437008017"
+    "district": "Taran Taran",
+    "orgName": "Gurdwara Shri Bauli Sahib, Goindwal",
+    "contact": "8437008017",
+    "language": {
+      "en": {
+        "orgName": "Gurdwara Shri Bauli Sahib, Goindwal",
+        "district": "Taran Taran"
+      },
+      "pa": {
+        "orgName": "ਗੁ: ਸ੍ਰੀ ਬਾਊਲੀ ਸਾਹਿਬ, ਗੋਇੰਦਵਾਲ",
+        "district": "ਤਰਨ ਤਾਰਨ"
+      }
+    },
+    "isStateWide": false
   },
   {
-    "district": { "en": "Amritsar", "pa": "ਅੰਮ੍ਰਿਤਸਰ" },
-    "type": { "en": "Gurudwara", "pa": "ਗੁਰਦੁਆਰਾ" },
-    "name": { "en": "Gurdwara Baba Budha Sahib Ji, Ramdas", "pa": "ਗੁ: ਬਾਬਾ ਬੁੱਧਾ ਸਾਹਿਬ ਜੀ, ਰਮਦਾਸ" },
-    "contactNumber": "8437008023"
+    "district": "Amritsar",
+    "orgName": "Gurdwara Baba Budha Sahib Ji, Ramdas",
+    "contact": "8437008023",
+    "language": {
+      "en": {
+        "orgName": "Gurdwara Baba Budha Sahib Ji, Ramdas",
+        "district": "Amritsar"
+      },
+      "pa": {
+        "orgName": "ਗੁ: ਬਾਬਾ ਬੁੱਧਾ ਸਾਹਿਬ ਜੀ, ਰਮਦਾਸ",
+        "district": "ਅੰਮ੍ਰਿਤਸਰ"
+      }
+    },
+    "isStateWide": false
   },
   {
-    "district": { "en": "Ropar", "pa": "ਰੋਪੜ" },
-    "type": { "en": "Gurudwara", "pa": "ਗੁਰਦੁਆਰਾ" },
-    "name": { "en": "Gurdwara Thatha Sahib Pa: Daswi, Kotla Nihang", "pa": "ਗੁ: ਠਾਠਾ ਸਾਹਿਬ ਪਾ: ਦਸਵੀ, ਕੋਟਲਾ ਨਿਹੰਗ" },
-    "contactNumber": "8437008024"
+    "district": "Ropar",
+    "orgName": "Gurdwara Thatha Sahib Pa: Daswi, Kotla Nihang",
+    "contact": "8437008024",
+    "language": {
+      "en": {
+        "orgName": "Gurdwara Thatha Sahib Pa: Daswi, Kotla Nihang",
+        "district": "Ropar"
+      },
+      "pa": {
+        "orgName": "ਗੁ: ਠਾਠਾ ਸਾਹਿਬ ਪਾ: ਦਸਵੀ, ਕੋਟਲਾ ਨਿਹੰਗ",
+        "district": "ਰੋਪੜ"
+      }
+    },
+    "isStateWide": false
   },
   {
-    "district": { "en": "Ropar", "pa": "ਰੋਪੜ" },
-    "type": { "en": "Gurudwara", "pa": "ਗੁਰਦੁਆਰਾ" },
-    "name": { "en": "Gurdwara Shri Chamkaur Sahib", "pa": "ਗੁਰਦੁਆਰਾ ਸ੍ਰੀ ਚਮਕੌਰ ਸਾਹਿਬ" },
-    "contactNumber": "8437008025"
+    "district": "Ropar",
+    "orgName": "Gurdwara Shri Chamkaur Sahib",
+    "contact": "8437008025",
+    "language": {
+      "en": {
+        "orgName": "Gurdwara Shri Chamkaur Sahib",
+        "district": "Ropar"
+      },
+      "pa": {
+        "orgName": "ਗੁਰਦੁਆਰਾ ਸ੍ਰੀ ਚਮਕੌਰ ਸਾਹਿਬ",
+        "district": "ਰੋਪੜ"
+      }
+    },
+    "isStateWide": false
   },
   {
-    "district": { "en": "Ludhiana", "pa": "ਲੁਧਿਆਣਾ" },
-    "type": { "en": "Gurudwara", "pa": "ਗੁਰਦੁਆਰਾ" },
-    "name": { "en": "Gurdwara Shri Charan Kandal Sahib, Mandevala", "pa": "ਗੁ: ਸ੍ਰੀ ਚਰਨਕੰਡਲ ਸਾਹਿਬ, ਮਾਡੀਵਾਲਾ" },
-    "contactNumber": "8437008026"
+    "district": "Ludhiana",
+    "orgName": "Gurdwara Shri Charan Kandal Sahib, Mandevala",
+    "contact": "8437008026",
+    "language": {
+      "en": {
+        "orgName": "Gurdwara Shri Charan Kandal Sahib, Mandevala",
+        "district": "Ludhiana"
+      },
+      "pa": {
+        "orgName": "ਗੁ: ਸ੍ਰੀ ਚਰਨਕੰਡਲ ਸਾਹਿਬ, ਮਾਡੀਵਾਲਾ",
+        "district": "ਲੁਧਿਆਣਾ"
+      }
+    },
+    "isStateWide": false
   },
   {
-    "district": { "en": "Phagwara", "pa": "ਫਗਵਾੜਾ" },
-    "type": { "en": "Gurudwara", "pa": "ਗੁਰਦੁਆਰਾ" },
-    "name": { "en": "Gurdwara Shri Baran Sahib", "pa": "ਗੁਰਦੁਆਰਾ ਸ੍ਰੀ ਬਾਰਨ ਸਾਹਿਬ" },
-    "contactNumber": "8437008028"
+    "district": "Phagwara",
+    "orgName": "Gurdwara Shri Baran Sahib",
+    "contact": "8437008028",
+    "language": {
+      "en": {
+        "orgName": "Gurdwara Shri Baran Sahib",
+        "district": "Phagwara"
+      },
+      "pa": {
+        "orgName": "ਗੁਰਦੁਆਰਾ ਸ੍ਰੀ ਬਾਰਨ ਸਾਹਿਬ",
+        "district": "ਫਗਵਾੜਾ"
+      }
+    },
+    "isStateWide": false
   },
   {
-    "district": { "en": "Firozpur", "pa": "ਫਿਰੋਜ਼ਪੁਰ" },
-    "type": { "en": "Gurudwara", "pa": "ਗੁਰਦੁਆਰਾ" },
-    "name": { "en": "Gursar Jamni Sahib Pa: Daswi, Basidpur", "pa": "ਗੁ: ਗੁਰਸਰ ਜਾਮਨੀ ਸਾਹਿਬ ਪਾ: ਦਸਵੀ, ਬਸੀਦਪੁਰ" },
-    "contactNumber": "8437008038"
+    "district": "Firozpur",
+    "orgName": "Gursar Jamni Sahib Pa: Daswi, Basidpur",
+    "contact": "8437008038",
+    "language": {
+      "en": {
+        "orgName": "Gursar Jamni Sahib Pa: Daswi, Basidpur",
+        "district": "Firozpur"
+      },
+      "pa": {
+        "orgName": "ਗੁ: ਗੁਰਸਰ ਜਾਮਨੀ ਸਾਹਿਬ ਪਾ: ਦਸਵੀ, ਬਸੀਦਪੁਰ",
+        "district": "ਫਿਰੋਜ਼ਪੁਰ"
+      }
+    },
+    "isStateWide": false
   },
   {
-    "district": { "en": "Gurdaspur", "pa": "ਗੁਰਦਾਸਪੁਰ" },
-    "type": { "en": "Gurudwara", "pa": "ਗੁਰਦੁਆਰਾ" },
-    "name": { "en": "Gurdwara Shri Darbar Sahib, Tera Baba Nanak", "pa": "ਗੁ: ਸ੍ਰੀ ਦਰਬਾਰ ਸਾਹਿਬ, ਟੇਰਾ ਬਾਬਾ ਨਾਨਕ" },
-    "contactNumber": "8437008045"
+    "district": "Gurdaspur",
+    "orgName": "Gurdwara Shri Darbar Sahib, Tera Baba Nanak",
+    "contact": "8437008045",
+    "language": {
+      "en": {
+        "orgName": "Gurdwara Shri Darbar Sahib, Tera Baba Nanak",
+        "district": "Gurdaspur"
+      },
+      "pa": {
+        "orgName": "ਗੁ: ਸ੍ਰੀ ਦਰਬਾਰ ਸਾਹਿਬ, ਟੇਰਾ ਬਾਬਾ ਨਾਨਕ",
+        "district": "ਗੁਰਦਾਸਪੁਰ"
+      }
+    },
+    "isStateWide": false
   },
   {
-    "district": { "en": "Taran Taran", "pa": "ਤਰਨ ਤਾਰਨ" },
-    "type": { "en": "Gurudwara", "pa": "ਗੁਰਦੁਆਰਾ" },
-    "name": { "en": "Gurdwara Baba Beer Singh Ji, Pind Ratoke", "pa": "ਗੁ: ਬਾਬਾ ਬੀਰ ਸਿੰਘ ਜੀ, ਪਿੰਡ ਰਟੋਕੇ" },
-    "contactNumber": "8437008055"
+    "district": "Taran Taran",
+    "orgName": "Gurdwara Baba Beer Singh Ji, Pind Ratoke",
+    "contact": "8437008055",
+    "language": {
+      "en": {
+        "orgName": "Gurdwara Baba Beer Singh Ji, Pind Ratoke",
+        "district": "Taran Taran"
+      },
+      "pa": {
+        "orgName": "ਗੁ: ਬਾਬਾ ਬੀਰ ਸਿੰਘ ਜੀ, ਪਿੰਡ ਰਟੋਕੇ",
+        "district": "ਤਰਨ ਤਾਰਨ"
+      }
+    },
+    "isStateWide": false
   },
   {
-    "district": { "en": "Taran Taran", "pa": "ਤਰਨ ਤਾਰਨ" },
-    "type": { "en": "Gurudwara", "pa": "ਗੁਰਦੁਆਰਾ" },
-    "name": { "en": "Gurdwara Pa: Panshi, Chehala Sahib", "pa": "ਗੁ: ਪਾ: ਪੰਸ਼ੀ, ਚੇਹਲਾ ਸਾਹਿਬ" },
-    "contactNumber": "8437008060"
-  },
-  {
-    "district": { "en": "Taran Taran", "pa": "ਤਰਨ ਤਾਰਨ" },
-    "type": { "en": "Gurudwara", "pa": "ਗੁਰਦੁਆਰਾ" },
-    "name": { "en": "Gurdwara Bhai Tara Singh Ji Shaheed, Pind Van", "pa": "ਗੁ: ਭਾਈ ਤਾਰਾ ਸਿੰਘ ਜੀ ਸ਼ਹੀਦ, ਪਿੰਡ ਵਾਂ" },
-    "contactNumber": "8437008061"
-  },
-  {
-    "district": { "en": "Kupwara", "pa": "ਕੁਪਵਾਰਾ" },
-    "type": { "en": "Gurudwara", "pa": "ਗੁਰਦੁਆਰਾ" },
-    "name": { "en": "Gurdwara Bhai Lalu Ji and Gur: Bauli Sahib, Dhola", "pa": "ਗੁ: ਭਾਈ ਲਾਲੂ ਜੀ ਅਤੇ ਗੁ: ਬਾਊਲੀ ਸਾਹਿਬ, ਢੋਲਾ" },
-    "contactNumber": "8437008078"
+    "district": "Taran Taran",
+    "orgName": "Gurdwara Pa: Panshi, Chehala Sahib",
+    "contact": "8437008060",
+    "language": {
+      "en": {
+        "orgName": "Gurdwara Pa: Panshi, Chehala Sahib",
+        "district": "Taran Taran"
+      },
+      "pa": {
+        "orgName": "ਗੁ: ਪਾ: ਪੰਸ਼ੀ, ਚੇਹਲਾ ਸਾਹਿਬ",
+        "district": "ਤਰਨ ਤਾਰਨ"
+      }
+    },
+    "isStateWide": false
   }
 ]
