@@ -22,7 +22,7 @@ const translations = {
     // Home Page
     welcome: 'Punjab Stands Together',
     welcomeMessage: 'Do you need help or want to help? Use the buttons below to request assistance or offer support!',
-    getHelpNow: 'Get Help Now',
+    getHelpNow: 'Get Help Now!',
     viewHelplines: 'View Helplines',
     viewAllRequests: 'View All Requests',
     emergencyNotice: 'Emergency Notice',
