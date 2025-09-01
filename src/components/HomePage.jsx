@@ -2,7 +2,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { db } from '../firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import { useEffect } from 'react';
-
+import Footer from './Footer'
 const HomePage = ({ onNavigate }) => {
   const { t, language, toggleLanguage } = useLanguage();
 
@@ -118,6 +118,8 @@ const HomePage = ({ onNavigate }) => {
           </div>
         </div>
       </main>
+      {/* <Footer onNavigate={onNavigate} /> */}
+       
     </div>
   );
 };

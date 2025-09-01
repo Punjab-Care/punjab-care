@@ -7,6 +7,8 @@ import ViewRequests from './components/ViewRequests';
 import MyRequests from './components/MyRequests';
 import './App.css';
 import { Toaster } from "react-hot-toast"
+import Footer from './components/Footer';
+import AboutUs from './components/AboutUs';
 
 
 let ownerId = localStorage.getItem("ownerId");
@@ -56,13 +58,15 @@ const AppContent = () => {
     switch (currentPage) {
       case 'home':
         return <HomePage onNavigate={handleNavigation} />;
+
       case 'request':
         return <RequestHelpForm />;
-        <Toaster posotion="top-center" reverseOrder={false} />
       case 'helpline':
         return <HelplineNumbers />;
       case 'view':
         return <ViewRequests />;
+      case 'AboutUs':
+        return <AboutUs />;
       case 'my':
         return <MyRequests />;
       default:
@@ -72,7 +76,7 @@ const AppContent = () => {
 
   // If we're on the home page, render it directly (it has its own header)
   if (currentPage === 'home') {
-    return renderContent();
+    return <HomePage onNavigate={handleNavigation} />;
   }
 
   // For other pages, show the navigation header
@@ -127,11 +131,15 @@ const AppContent = () => {
       {/* Main Content */}
       <main className="flex-1">
         {renderContent()}
+
       </main>
+      {/*footer*/}
+        <Footer onNavigate={handleNavigation} />
+
     </div>
   );
 };
-
+  
 function App() {
   return (
     <LanguageProvider>

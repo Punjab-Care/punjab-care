@@ -1,175 +1,129 @@
-import { useState, useEffect } from 'react';
-import { collection, getDocs, query, where } from 'firebase/firestore';
-import { db } from '../firebase';
-import { useLanguage } from '../contexts/LanguageContext';
-import districts from '../../data/districts';
+import React, { useState, useEffect } from "react";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../firebase";
+import { useLanguage } from "../contexts/LanguageContext"; // keep your existing context path
 
 const HelplineNumbers = () => {
-  const { t, selectedLanguage } = useLanguage(); // language context
-  const [selectedDistrict, setSelectedDistrict] = useState('');
-  const [helplines, setHelplines] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const { language } = useLanguage(); // "en" / "pa"
+  const [districts, setDistricts] = useState([]);
+  const [selectedDistrict, setSelectedDistrict] = useState("");
+  const [rawHelplines, setRawHelplines] = useState([]); // raw docs from firestore
+  const [helplines, setHelplines] = useState([]); // mapped to selected language
+  const [loadingDistricts, setLoadingDistricts] = useState(false);
+  const [loadingHelplines, setLoadingHelplines] = useState(false);
 
-  // Fetch helplines for selected district & language
-  const fetchHelplinesByDistrict = async (district) => {
-    if (!district) {
-      setHelplines([]);
-      return;
-    }
-
-    setLoading(true);
-    try {
-      const districtField = selectedLanguage === 'pa' ? 'district.pa' : 'district.en';
-
-      const helplinesQuery = query(
-        collection(db, 'helplines'), // make sure collection name matches
-        where(districtField, '==', district)
-      );
-
-      const snapshot = await getDocs(helplinesQuery);
-
-      const helplineData = snapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
-
-      setHelplines(helplineData);
-    } catch (error) {
-      console.error('Error fetching helplines:', error);
-      setHelplines([]);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  // Fetch helplines whenever district or language changes
+  // 1) Fetch unique top-level districts (canonical field) — DO NOT localize dropdown here
   useEffect(() => {
-    if (selectedDistrict) {
-      fetchHelplinesByDistrict(selectedDistrict);
-    }
-  }, [selectedDistrict, selectedLanguage]);
+    const fetchDistricts = async () => {
+      setLoadingDistricts(true);
+      try {
+        const snap = await getDocs(collection(db, "helplines"));
+        const unique = new Set();
+        snap.forEach((doc) => {
+          const d = doc.data();
+          // prefer top-level district (canonical English key). Fallback to language.en.district if absent.
+          const canonical = d.district || d.language?.en?.district || null;
+          if (canonical) unique.add(canonical);
+        });
+        setDistricts(Array.from(unique).sort());
+      } catch (err) {
+        console.error("Error fetching districts:", err);
+      } finally {
+        setLoadingDistricts(false);
+      }
+    };
+    fetchDistricts();
+  }, []); // only once
 
-  const handleDistrictChange = (district) => {
-    setSelectedDistrict(district);
-  };
+  // 2) Fetch raw helpline docs for the selected district (uses top-level 'district' field)
+  useEffect(() => {
+    const fetchHelplines = async () => {
+      if (!selectedDistrict) {
+        setRawHelplines([]);
+        return;
+      }
+      setLoadingHelplines(true);
+      try {
+        const q = query(
+          collection(db, "helplines"),
+          where("district", "==", selectedDistrict)
+        );
+        const snap = await getDocs(q);
+        const docs = snap.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+        setRawHelplines(docs);
+      } catch (err) {
+        console.error("Error fetching helplines:", err);
+        setRawHelplines([]);
+      } finally {
+        setLoadingHelplines(false);
+      }
+    };
 
-  // Card component
-  const HelplineCard = ({ helpline }) => (
-    <div className="border border-gray-200 rounded-md p-4 bg-white shadow-sm">
-      <div className="flex justify-between items-start mb-2">
-        <div className="font-semibold text-gray-900">{helpline.name[selectedLanguage]}</div>
-        <span
-          className={`px-2 py-1 text-xs rounded-full ${
-            helpline.type === 'government'
-              ? 'bg-blue-100 text-blue-800'
-              : helpline.type === 'gurudwara'
-              ? 'bg-yellow-100 text-yellow-800'
-              : 'bg-green-100 text-green-800'
-          }`}
-        >
-          {helpline.type === 'government'
-            ? t('government')
-            : helpline.type === 'gurudwara'
-            ? t('gurudwara')
-            : t('ngo')}
-        </span>
-      </div>
+    fetchHelplines();
+  }, [selectedDistrict]);
 
-      <div className="text-blue-600 font-medium mb-2">
-        <a href={`tel:${helpline.contactNumber}`} className="hover:underline">
-          {helpline.contactNumber}
-        </a>
-      </div>
-
-      {helpline.description && (
-        <div className="text-sm text-gray-600 mb-2">{helpline.description[selectedLanguage]}</div>
-      )}
-
-      {helpline.address && (
-        <div className="text-sm text-gray-500">
-          <strong>{t('address')}:</strong> {helpline.address[selectedLanguage]}
-        </div>
-      )}
-
-      {helpline.availableHours && (
-        <div className="text-sm text-gray-500 mt-1">
-          <strong>{t('availableHours')}:</strong> {helpline.availableHours}
-        </div>
-      )}
-    </div>
-  );
-
-  // Group helplines by type
-  const groupedHelplines = {
-    ngo: helplines.filter(h => h.type === 'ngo'),
-    gurudwara: helplines.filter(h => h.type === 'gurudwara'),
-    government: helplines.filter(h => h.type === 'government')
-  };
+  // 3) Map raw docs -> display items whenever rawHelplines or language changes
+  useEffect(() => {
+    const mapped = rawHelplines.map((d) => ({
+      id: d.id,
+      contact: d.contact || d.phone || d.contactNumber || "N/A",
+      // show orgName from selected language, fallback to top-level orgName if any
+      orgName: d.language?.[language]?.orgName || d.orgName || d.name || "N/A",
+      // optionally show localized district for card (but dropdown remains canonical)
+      districtDisplay: d.language?.[language]?.district || d.district || "",
+      raw: d, // keep raw in case you need it later
+    }));
+    setHelplines(mapped);
+  }, [rawHelplines, language]);
 
   return (
-    <div className="p-4">
-      <h2 className="text-xl font-semibold mb-4">{t('helplineNumbers')}</h2>
+    <div className="p-6 max-w-2xl mx-auto">
+      {/* Header left static so you can handle localization later */}
+      <h2 className="text-xl font-bold mb-4">Helpline Numbers</h2>
 
-      {/* District Selection */}
-      <div className="mb-6">
-        <label className="block text-sm font-medium mb-2 text-gray-700">
-          {t('selectDistrict')}
-        </label>
+      {/* District Dropdown (canonical values; stays same when language toggles) */}
+      <div>
+        <label className="block text-sm text-gray-600 mb-1">District</label>
         <select
           value={selectedDistrict}
-          onChange={(e) => handleDistrictChange(e.target.value)}
-          className="w-full p-3 border border-gray-300 rounded-md bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          onChange={(e) => setSelectedDistrict(e.target.value)}
+          className="border rounded p-2 mb-4 w-full"
         >
-          <option value="">{t('selectDistrict')}</option>
-          {districts.map(d => (
-            <option
-              key={d.district}
-              value={selectedLanguage === 'pa' ? d.district_punjabi : d.district}
-            >
-              {d.district} / {d.district_punjabi}
-            </option>
-          ))}
+          <option value="">{/* static label — change later if you want */}Select District</option>
+          {loadingDistricts ? (
+            <option>Loading...</option>
+          ) : (
+            districts.map((d) => (
+              <option key={d} value={d}>
+                {d}
+              </option>
+            ))
+          )}
         </select>
       </div>
 
-      {/* Helplines Display */}
-      {selectedDistrict ? (
-        <div>
-          {loading ? (
-            <div className="text-center py-8 text-gray-500">{t('loading')}</div>
-          ) : helplines.length === 0 ? (
-            <div className="text-center py-8 text-gray-500">{t('noHelplinesFound')}</div>
-          ) : (
-            <div className="space-y-6">
-              {groupedHelplines.ngo.length > 0 && (
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">{t('ngo')}</h3>
-                  <div className="space-y-4">
-                    {groupedHelplines.ngo.map(hl => <HelplineCard key={hl.id} helpline={hl} />)}
-                  </div>
-                </div>
-              )}
-              {groupedHelplines.gurudwara.length > 0 && (
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">{t('gurudwara')}</h3>
-                  <div className="space-y-4">
-                    {groupedHelplines.gurudwara.map(hl => <HelplineCard key={hl.id} helpline={hl} />)}
-                  </div>
-                </div>
-              )}
-              {groupedHelplines.government.length > 0 && (
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">{t('government')}</h3>
-                  <div className="space-y-4">
-                    {groupedHelplines.government.map(hl => <HelplineCard key={hl.id} helpline={hl} />)}
-                  </div>
-                </div>
-              )}
-            </div>
-          )}
-        </div>
+      {/* Helpline list */}
+      {loadingHelplines ? (
+        <p className="text-sm text-gray-600">Loading helplines...</p>
+      ) : helplines.length === 0 && selectedDistrict ? (
+        <p className="text-sm text-gray-600">No helplines found for this district.</p>
       ) : (
-        <div className="text-center py-8 text-gray-500">{t('selectDistrictToView')}</div>
+        <ul className="space-y-3">
+          {helplines.map((h) => (
+            <li
+              key={h.id}
+              className="border rounded p-3 shadow hover:shadow-md transition"
+            >
+              <p className="font-semibold">{h.orgName}</p>
+              {h.districtDisplay && (
+                <p className="text-sm text-gray-600">{h.districtDisplay}</p>
+              )}
+              <p className="text-sm">
+                📞 <a href={`tel:${h.contact}`}>{h.contact}</a>
+              </p>
+            </li>
+          ))}
+        </ul>
       )}
     </div>
   );
