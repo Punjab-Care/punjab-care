@@ -106,17 +106,17 @@ const translations = {
   },
   pa: {
     // Navigation
-    requestHelp: 'ਮਦਦ ਦੀ ਬੇਨਤੀ',
+    requestHelp: 'ਸਹਾਇਤਾ ਲਈ ਬੇਨਤੀ',
     helplineNumbers: 'ਹੈਲਪਲਾਈਨ ਨੰਬਰ',
     viewRequests: 'ਬੇਨਤੀਆਂ ਦੇਖੋ',
     myRequests: 'ਮੇਰੀਆਂ ਬੇਨਤੀਆਂ',
-    backToHome: 'ਹੋਮ ਵਾਪਸ ਜਾਓ',
+    backToHome: 'ਹੋਮ ਪੇਜ ਤੇ ਵਾਪਸ',
     
     // Home Page
     welcome: 'ਪੰਜਾਬ ਇਕੱਠਾ ਖੜ੍ਹਾ ਹੈ',
     welcomeMessage: 'ਜੇ ਕਰ ਤੁਹਾਨੂੰ ਮਦਦ ਦੀ ਲੋੜ ਹੈ ਜਾਂ ਤੁਸੀਂ ਮਦਦ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ ਤਾਂ ਹੇਠਾਂ ਦਿੱਤੇ ਬਟਨਾਂ ਰਾਹੀਂ ਸਹਾਇਤਾ ਪ੍ਰਾਪਤ ਜਾਂ ਪਹੁੰਚਾ ਸਕਦੇ ਹੋ !',
-    getHelpNow: 'ਹੁਣੇ ਮਦਦ ਪ੍ਰਾਪਤ ਕਰੋ',
-    viewHelplines: 'ਹੈਲਪਲਾਈਨ ਦੇਖੋ',
+    getHelpNow: 'ਸਹਾਇਤਾ ਪ੍ਰਾਪਤ ਕਰੋ',
+    viewHelplines: 'ਸੰਪਰਕ ਕਰਨ ਲਈ',
     viewAllRequests: 'ਸਾਰੀਆਂ ਬੇਨਤੀਆਂ ਦੇਖੋ',
     emergencyNotice: 'ਐਮਰਜੈਂਸੀ ਨੋਟਿਸ',
     emergencyMessage: 'ਜੇਕਰ ਤੁਸੀਂ ਤੁਰੰਤ ਖ਼ਤਰੇ ਵਿੱਚ ਹੋ, ਤਾਂ ਪਹਿਲਾਂ ਐਮਰਜੈਂਸੀ ਸੇਵਾਵਾਂ ਨੂੰ ਕਾਲ ਕਰੋ',
