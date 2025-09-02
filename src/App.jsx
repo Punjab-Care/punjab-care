@@ -76,7 +76,12 @@ const AppContent = () => {
 
   // If we're on the home page, render it directly (it has its own header)
   if (currentPage === 'home') {
-    return <HomePage onNavigate={handleNavigation} />;
+    return (
+      <>
+        {renderContent()}
+       
+      </>
+    );
   }
 
   // For other pages, show the navigation header
