@@ -115,12 +115,12 @@ const translations = {
     // Home Page
     welcome: 'ਪੰਜਾਬ ਇਕੱਠਾ ਖੜ੍ਹਾ ਹੈ',
 
-    welcomeMessage: 'ਜੇ ਕਰ ਤੁਹਾਨੂੰ ਮਦਦ ਦੀ ਲੋੜ ਹੈ ਜਾਂ ਤੁਸੀਂ ਮਦਦ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ ਤਾਂ ਹੇਠਾਂ ਦਿੱਤੇ ਬਟਨਾਂ ਰਾਹੀਂ ਸਹਾਇਤਾ ਪ੍ਰਾਪਤ ਜਾਂ ਪਹੁੰਚਾ ਸਕਦੇ ਹੋ !',
+    welcomeMessage: 'ਜੇ ਕਰ ਤੁਹਾਨੂੰ ਮਦਦ ਦੀ ਲੋੜ ਹੈ ਜਾਂ ਤੁਸੀਂ ਮਦਦ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ ਤਾਂ ਹੇਠਾਂ ਦਿੱਤੇ ਬਟਨਾਂ ਰਾਹੀਂ ਸਹਾਇਤਾ ਪਹੁੰਚਾ ਜਾਂ ਪ੍ਰਾਪਤ ਕਰ ਸਕਦੇ ਹੋ !',
     getHelpNow: 'ਸਹਾਇਤਾ ਪ੍ਰਾਪਤ ਕਰੋ',
     viewHelplines: 'ਸੰਪਰਕ ਕਰਨ ਲਈ',
     viewAllRequests: 'ਸਾਰੀਆਂ ਬੇਨਤੀਆਂ ਦੇਖੋ',
     emergencyNotice: 'ਐਮਰਜੈਂਸੀ ਨੋਟਿਸ',
-    emergencyMessage: 'ਜੇਕਰ ਤੁਸੀਂ ਤੁਰੰਤ ਖ਼ਤਰੇ ਵਿੱਚ ਹੋ, ਤਾਂ ਪਹਿਲਾਂ ਐਮਰਜੈਂਸੀ ਸੇਵਾਵਾਂ ਨੂੰ ਕਾਲ ਕਰੋ',
+    emergencyMessage: 'ਜੇਕਰ ਤੁਸੀਂ ਖ਼ਤਰੇ ਵਿੱਚ ਹੋ, ਤਾਂ ਤੁਰੰਤ ਐਮਰਜੈਂਸੀ ਸੇਵਾਵਾਂ ਨੂੰ ਕਾਲ ਕਰੋ',
     footerText: 'ਸਭ ਲਈ ਸਰਲ, ਮੋਬਾਈਲ-ਕੇਂਦ੍ਰਿਤ ਲੇਆਊਟ',
     
     // Request Help Form
@@ -140,21 +140,21 @@ const translations = {
     descriptionRequired: 'ਵੇਰਵਾ ਲੋੜੀਂਦਾ ਹੈ',
     
     // Help Types
-    medical: 'ਮੈਡੀਕਲ/ਡਾਕਟਰੀ',
-    food: 'ਭੋਜਨ',
-    shelter: 'ਆਸਰਾ',
-    emergencyTransport: 'ਐਮਰਜੈਂਸੀ ਟ੍ਰਾਂਸਪੋਰਟ',
+    medical: 'ਮੈਡੀਕਲ/ਡਾਕਟਰੀ ਸਬੰਧਿਤ',
+    food: 'ਖਾਣ-ਪੀਣ ਸਬੰਧਿਤ',
+    shelter: 'ਆਸਰੇ ਦੇ ਸਬੰਧਿਤ',
+    emergencyTransport: 'ਐਮਰਜੈਂਸੀ ਟ੍ਰਾਂਸਪੋਰਟ ਸਬੰਧਿਤ',
     
     // Helpline Sections
     governmentHelplines: 'ਸਰਕਾਰੀ ਹੈਲਪਲਾਈਨ',
-    ngoHelplines: 'ਐਨਜੀਓ ਅਤੇ ਮਦਦ ਕਰਨ ਵਾਲੇ ਗਰੁੱਪ',
+    ngoHelplines: 'ਐਨਜੀਓ ਅਤੇ ਮਦਦ ਕਰਨ ਵਾਲੇ ਸਮੂਹ',
     
     // District Selection
     selectDistrict: 'ਜ਼ਿਲ੍ਹਾ ਚੁਣੋ',
     helplinesFor: 'ਹੈਲਪਲਾਈਨ',
     selectDistrictToView: 'ਹੈਲਪਲਾਈਨ ਦੇਖਣ ਲਈ ਜ਼ਿਲ੍ਹਾ ਚੁਣੋ',
     selectDistrictMessage: 'ਉਪਲਬਧ ਹੈਲਪਲਾਈਨ ਦੇਖਣ ਲਈ ਉੱਪਰ ਦੇ ਡ੍ਰੌਪਡਾਊਨ ਤੋਂ ਆਪਣਾ ਜ਼ਿਲ੍ਹਾ ਚੁਣੋ',
-    noHelplinesFound: 'ਇਸ ਜ਼ਿਲ੍ਹੇ ਲਈ ਕੋਈ ਹੈਲਪਲਾਈਨ ਨਹੀਂ ਮਿਲੀ',
+    noHelplinesFound: 'ਮਾਫੀ ਚਾਹੁੰਦੇ ਹਾਂ ਪਰ ਇਸ ਜ਼ਿਲ੍ਹੇ ਲਈ ਕੋਈ ਹੈਲਪਲਾਈਨ ਨਹੀਂ ਮਿਲੀ',
     noHelplinesMessage: 'ਕਿਰਪਾ ਕਰਕੇ ਬਾਅਦ ਵਿੱਚ ਚੈਕ ਕਰੋ ਜਾਂ ਸਿੱਧੇ ਐਮਰਜੈਂਸੀ ਸੇਵਾਵਾਂ ਨੂੰ ਸੰਪਰਕ ਕਰੋ',
     government: 'ਸਰਕਾਰੀ',
     ngo: 'ਐਨਜੀਓ',
@@ -163,13 +163,13 @@ const translations = {
     
     // Request Details
     clickToViewDetails: 'ਵਿਸਤਾਰ ਵਿੱਚ ਦੇਖਣ ਲਈ ਕਲਿਕ ਕਰੋ',
-    loadMore: 'ਹੋਰ ਲੋਡ ਕਰੋ',
-    loadAll: 'ਸਭ ਲੋਡ ਕਰੋ',
+    loadMore: 'ਹੋਰ ਦੇਖੋ ',
+    loadAll: 'ਸਭ ਵਿਸਤਾਰ ਵਿੱਚ ਦੇਖੋ',
     noRequests: 'ਕੋਈ ਬੇਨਤੀ ਨਹੀਂ ਮਿਲੀ',
     
     // Status and Actions
     all: 'ਸਭ',
-    pending: 'ਬਕਾਇਆ',
+    pending: 'ਰੁਕਿਆ ਹੋਇਆ',
     completed: 'ਪੂਰਾ ਹੋਇਆ',
     markCompleted: 'ਪੂਰਾ ਕਰੋ',
     completedAt: 'ਪੂਰਾ ਹੋਇਆ',
@@ -185,7 +185,7 @@ const translations = {
     
     // Messages
     requestSubmitted: 'ਬੇਨਤੀ ਸਫਲਤਾਪੂਰਵਕ ਜਮ੍ਹਾਂ ਕੀਤੀ ਗਈ ਹੈ',
-    errorSubmitting: 'ਬੇਨਤੀ ਜਮ੍ਹਾਂ ਕਰਨ ਵਿੱਚ ਤਰੁਟੀ',
+    errorSubmitting: 'ਬੇਨਤੀ ਜਮ੍ਹਾਂ ਕਰਨ ਵਿੱਚ ਰੁਕਾਵਟ',
     locationError: 'ਸਥਾਨ ਪ੍ਰਾਪਤ ਕਰਨ ਵਿੱਚ ਅਸਫਲ. ਕਿਰਪਾ ਕਰਕੇ ਪੱਕਾ ਕਰੋ ਕਿ ਲੋਕੇਸ਼ਨ ਸਰਵਿਸਾਂ ਚਾਲੂ ਹਨ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।',
     enablingGPS: 'ਬਿਹਤਰ ਸ਼ੁੱਧਤਾ ਲਈ GPS ਚਾਲੂ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...',
     fetchingLocation: 'ਤੁਹਾਡਾ ਸਥਾਨ ਪ੍ਰਾਪਤ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...',
