@@ -36,7 +36,7 @@ const HomePage = ({ onNavigate }) => {
         <div className="px-4 py-3">
           <div className="flex justify-between items-center">
             <h1 className="text-xl font-bold text-blue-500">
-             {t('Punjab Care')}
+             {t('appTitle')}
             </h1>
             <div className="flex gap-2">
               <button
@@ -114,7 +114,7 @@ const HomePage = ({ onNavigate }) => {
 
           {/* Footer */}
           <div className="mt-5 text-center text-gray-500 text-xl">
-            <p>{t('Support Punjab  ')}</p>
+            <p>{t('footerText')}</p>
           </div>
         </div>
       </main>

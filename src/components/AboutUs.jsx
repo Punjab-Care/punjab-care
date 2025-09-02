@@ -2,34 +2,21 @@ import React from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 
 const AboutUs = () => {
-  const { language } = useLanguage();
-
-  const content = {
-    en: {
-      title: "About Us",
-      description: `We are a group of students from Punjab who started this initiative to contribute through our education and efforts. 
-      This app is built for flood relief — where people in need can request help and others can step forward to support. 
-      As the youth of Punjab, we stand with our motherland in every situation.`,
-      contact: "Connect with us: punjabcare25@gmail.com",
-    },
-    pa: {
-      title: "ਸਾਡੇ ਬਾਰੇ",
-      description: `ਅਸੀਂ ਪੰਜਾਬ ਦੇ ਕੁਝ ਵਿਦਿਆਰਥੀਆਂ ਦਾ ਸਮੂਹ ਹਾਂ, ਜਿਨ੍ਹਾਂ ਨੇ ਆਪਣੀ ਸਿੱਖਿਆ ਅਤੇ ਯਤਨਾਂ ਰਾਹੀਂ ਯੋਗਦਾਨ ਪਾਉਣ ਲਈ ਇਹ ਪਹਿਲ ਕੀਤੀ ਹੈ। 
-      ਇਹ ਐਪ ਹੜ੍ਹ ਰਾਹਤ ਲਈ ਬਣਾਈ ਗਈ ਹੈ — ਜਿੱਥੇ ਸਹਾਇਤਾ ਦੀ ਲੋੜ ਵਾਲੇ ਲੋਕ ਬੇਨਤੀ ਕਰ ਸਕਦੇ ਹਨ ਅਤੇ ਹੋਰ ਲੋਕ ਸਹਾਇਤਾ ਕਰਨ ਲਈ ਅੱਗੇ ਆ ਸਕਦੇ ਹਨ। 
-      ਅਸੀਂ ਪੰਜਾਬ ਦੇ ਨੌਜਵਾਨ ਹਾਂ ਅਤੇ ਹਰ ਸਥਿਤੀ ਵਿੱਚ ਪੰਜਾਬ ਨਾਲ ਖੜ੍ਹੇ ਹਾਂ।`,
-      contact: "ਸਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰਨ ਲਈ: punjabcare25@gmail.com",
-    },
-  };
-
+  const { t } = useLanguage();
+  
   return (
-    <div className="text-center max-w-3xl mx-auto">
-      <h2 className="text-xl font-bold mb-3">{content[language].title}</h2>
-      <p className="text-gray-700 whitespace-pre-line">
-        {content[language].description}
-      </p>
-      <p className="mt-3 font-medium text-blue-600">
-        {content[language].contact}
-      </p>
+    <div className="max-w-3xl mx-auto p-6">
+      <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+        <h2 className="text-2xl font-bold mb-3 text-gray-900">{t('AboutUs.title')}</h2>
+        <p className="text-gray-700 leading-relaxed">
+          {t('AboutUs.description')}
+        </p>
+        <div className="mt-5">
+          <a href="mailto:punjabcare25@gmail.com" className="inline-block px-4 py-2 rounded-md bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-100">
+            {t('AboutUs.contact')}
+          </a>
+        </div>
+      </div>
     </div>
   );
 };

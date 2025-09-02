@@ -6,7 +6,7 @@ const Footer = ({ onNavigate }) => {
     <footer className="bg-gray-50 border-t mt-10 py-6 text-center">
       <button
         type="button"
-        onClick={() => onNavigate("AboutUs")} // safe call
+        onClick={() => onNavigate("about")}
         className="text-xl font-medium text-blue-600 hover:text-blue-800 transition-colors underline-offset-4 hover:underline cursor-pointer"
       >
         About Us
