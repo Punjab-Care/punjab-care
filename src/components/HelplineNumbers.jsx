@@ -4,7 +4,7 @@ import { db } from "../firebase";
 import { useLanguage } from "../contexts/LanguageContext"; // keep your existing context path
 
 const HelplineNumbers = () => {
-  const { language } = useLanguage(); // "en" / "pa"
+  const { language, t } = useLanguage(); // "en" / "pa"
   const [districts, setDistricts] = useState([]);
   const [selectedDistrict, setSelectedDistrict] = useState("");
   const [rawHelplines, setRawHelplines] = useState([]); // raw docs from firestore
@@ -78,20 +78,19 @@ const HelplineNumbers = () => {
 
   return (
     <div className="p-6 max-w-2xl mx-auto">
-      {/* Header left static so you can handle localization later */}
-      <h2 className="text-xl font-bold mb-4">Helpline Numbers</h2>
+      <h2 className="text-xl font-bold mb-4">{t('helplineNumbers')}</h2>
 
       {/* District Dropdown (canonical values; stays same when language toggles) */}
       <div>
-        <label className="block text-sm text-gray-600 mb-1">District</label>
+        <label className="block text-sm text-gray-600 mb-1">{t('selectDistrict')}</label>
         <select
           value={selectedDistrict}
           onChange={(e) => setSelectedDistrict(e.target.value)}
           className="border rounded p-2 mb-4 w-full"
         >
-          <option value="">{/* static label — change later if you want */}Select District</option>
+          <option value="">{t('selectDistrict')}</option>
           {loadingDistricts ? (
-            <option>Loading...</option>
+            <option>{t('loading')}</option>
           ) : (
             districts.map((d) => (
               <option key={d} value={d}>
@@ -104,9 +103,9 @@ const HelplineNumbers = () => {
 
       {/* Helpline list */}
       {loadingHelplines ? (
-        <p className="text-sm text-gray-600">Loading helplines...</p>
+        <p className="text-sm text-gray-600">{t('loading')}</p>
       ) : helplines.length === 0 && selectedDistrict ? (
-        <p className="text-sm text-gray-600">No helplines found for this district.</p>
+        <p className="text-sm text-gray-600">{t('noHelplinesFound')}</p>
       ) : (
         <ul className="space-y-3">
           {helplines.map((h) => (

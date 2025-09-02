@@ -147,10 +147,12 @@ const MyRequests = () => {
   // ---------------- Format Helpers ----------------
   const formatTimestamp = (timestamp) => timestamp?.toDate ? timestamp.toDate().toLocaleString() : new Date(timestamp).toLocaleString();
   const getHelpTypeLabel = (type) => ({
-    medical: t('medical'),
-    food: t('food'),
-    shelter: t('shelter'),
-    emergencyTransport: t('emergencyTransport')
+    medical: t('helpTypes.medical'),
+    food: t('helpTypes.food'),
+    shelter: t('helpTypes.shelter'),
+    emergencyTransport: t('helpTypes.emergencyTransport'),
+    mosquitoNetTarpaulin: t('helpTypes.mosquitoNetTarpaulin'),
+    animalFeedMedicine: t('helpTypes.animalFeedMedicine')
   }[type] || type);
   const getStatusLabel = (status) => ({
     pending: t('pending'),
@@ -220,9 +222,24 @@ const MyRequests = () => {
                 <div className="text-sm text-gray-500">{formatTimestamp(r.timestamp)}</div>
               </div>
 
-              <div className="text-sm text-gray-600 mb-2">
+              <div className="text-sm text-gray-600 mb-2 flex flex-col gap-2 mt-2">
                 <div>{r.location}</div>
-                <div>{getHelpTypeLabel(r.typeOfHelp)}</div>
+                <div className="flex flex-wrap gap-2">
+                  {Array.isArray(r.typeOfHelp) ? (
+                    r.typeOfHelp.map((type, idx) => (
+                      <span
+                        key={idx}
+                        className="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full"
+                      >
+                        {getHelpTypeLabel(type)}
+                      </span>
+                    ))
+                  ) : (
+                    <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full">
+                      {getHelpTypeLabel(r.typeOfHelp)}
+                    </span>
+                  )}
+                </div>
               </div>
 
               <div className="flex justify-between items-center mb-2">

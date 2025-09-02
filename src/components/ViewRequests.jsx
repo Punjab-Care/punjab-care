@@ -59,9 +59,6 @@ const ViewRequests = () => {
       setLastDoc(snapshot.docs[snapshot.docs.length - 1]);
       setHasMore(!showAll && snapshot.docs.length === BATCH_SIZE);
 
-      // --------- TEST LOG ---------
-
-      // ----------------------------
     } catch (error) {
       console.error('Error fetching requests:', error);
     } finally {
@@ -86,9 +83,6 @@ const ViewRequests = () => {
       setRequests(allRequests);
       setHasMore(false);
 
-      // --------- TEST LOG ---------
-    
-      // ----------------------------
     } catch (error) {
       console.error('Error loading all requests:', error);
     } finally {
@@ -113,10 +107,12 @@ const ViewRequests = () => {
 
   const getHelpTypeLabel = (type) => {
     const helpTypes = {
-      medical: t('medical'),
-      food: t('food'),
-      shelter: t('shelter'),
-      emergencyTransport: t('emergencyTransport')
+      medical: t('helpTypes.medical'),
+      food: t('helpTypes.food'),
+      shelter: t('helpTypes.shelter'),
+      emergencyTransport: t('helpTypes.emergencyTransport'),
+      mosquitoNetTarpaulin: t('helpTypes.mosquitoNetTarpaulin'),
+      animalFeedMedicine: t('helpTypes.animalFeedMedicine')
     };
     return helpTypes[type] || type;
   };
@@ -196,9 +192,25 @@ const ViewRequests = () => {
                 <div className="text-sm text-gray-500">{formatTimestamp(request.timestamp)}</div>
               </div>
 
-              <div className="text-sm text-gray-600 mb-2">
+              {/* ✅ Fixed UI for location + help types */}
+              <div className="text-sm text-gray-600 mb-2 flex flex-col gap-2 mt-2">
                 <div>{request.location}</div>
-                <div>{getHelpTypeLabel(request.typeOfHelp)}</div>
+                <div className="flex flex-wrap gap-2">
+                  {Array.isArray(request.typeOfHelp) ? (
+                    request.typeOfHelp.map((type, idx) => (
+                      <span
+                        key={idx}
+                        className="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full"
+                      >
+                        {getHelpTypeLabel(type)}
+                      </span>
+                    ))
+                  ) : (
+                    <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full">
+                      {getHelpTypeLabel(request.typeOfHelp)}
+                    </span>
+                  )}
+                </div>
               </div>
 
               <div className="mb-2">
@@ -235,7 +247,6 @@ const ViewRequests = () => {
               >
                 {loadingMore ? t('loading') : t('loadMore')}
               </button>
-              
             </div>
           )}
         </div>
