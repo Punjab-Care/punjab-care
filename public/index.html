@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <title>Punjab Care</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/Punjab_Bharat.svg" />
 
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/12.2.1/firebase-app-compat.js"></script>
@@ -23,18 +24,79 @@
     -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+    <style>
+      body { 
+        margin: 0; 
+        padding: 0; 
+        min-height: 100vh;
+        background: url('/assets/Punjab%20_%20Bharat.svg') no-repeat center center fixed;
+        background-size: cover;
+        background-color: #f0f4f8;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      #root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      /* Keep the rest of your styles for backward compatibility */
+      #message { 
+        background: rgba(255, 255, 255, 0.9); 
+        max-width: 360px; 
+        margin: 100px auto 16px; 
+        padding: 32px 24px; 
+        border-radius: 8px; 
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+      #message h2 { 
+        color: #1e40af; 
+        font-weight: bold; 
+        font-size: 18px; 
+        margin: 0 0 12px; 
+      }
+      #message h1 { 
+        font-size: 24px; 
+        font-weight: 600; 
+        color: #1f2937; 
+        margin: 0 0 20px;
+      }
+      #message p { 
+        line-height: 1.6; 
+        margin: 16px 0 24px; 
+        font-size: 15px; 
+        color: #4b5563;
+      }
+      #message a { 
+        display: block; 
+        text-align: center; 
+        background: #2563eb; 
+        text-transform: uppercase; 
+        text-decoration: none; 
+        color: white; 
+        padding: 12px 16px; 
+        border-radius: 6px; 
+        font-weight: 500;
+        transition: background-color 0.2s;
+      }
+      #message a:hover {
+        background: #1d4ed8;
+      }
+      #load { 
+        color: rgba(255, 255, 255, 0.9); 
+        text-align: center; 
+        font-size: 14px; 
+        padding: 20px;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+      }
       @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
+        body { 
+          background: url('/assets/Punjab%20_%20Bharat.svg') no-repeat center center fixed;
+          background-size: cover;
+        }
+        #message { 
+          margin: 60px 16px 16px; 
+          padding: 24px 16px;
+        }
       }
     </style>
   </head>
