@@ -1,4 +1,4 @@
-[https:](https://punjabcare.org/)
+[Punjab Care:](https://punjabcare.org/)
 #Punjab Care: A flood relief Mobile web app
 
 A mobile-first web application built with React, Tailwind CSS,JavaScript and Firebase to help coordinate flood relief efforts in Punjab.
