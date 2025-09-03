@@ -35,22 +35,39 @@ const HelplineNumbers = () => {
     fetchDistricts();
   }, []); // only once
 
-  // 2) Fetch raw helpline docs for the selected district (uses top-level 'district' field)
+  // 2) Fetch helplines: only when a district is selected -> state-wide + district-specific
   useEffect(() => {
     const fetchHelplines = async () => {
+      // If no district selected, show nothing
       if (!selectedDistrict) {
         setRawHelplines([]);
         return;
       }
+
       setLoadingHelplines(true);
       try {
-        const q = query(
+        let allDocs = [];
+        
+        // Fetch state-wide helplines (isStateWide: true)
+        const stateWideQuery = query(
           collection(db, "helplines"),
-          where("district", "==", selectedDistrict)
+          where("isStateWide", "==", true)
         );
-        const snap = await getDocs(q);
-        const docs = snap.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-        setRawHelplines(docs);
+        const stateWideSnap = await getDocs(stateWideQuery);
+        const stateWideDocs = stateWideSnap.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+        allDocs = [...stateWideDocs];
+        
+        // Also fetch district-specific helplines (isStateWide: false) for the selected district
+        const districtQuery = query(
+          collection(db, "helplines"),
+          where("district", "==", selectedDistrict),
+          where("isStateWide", "==", false)
+        );
+        const districtSnap = await getDocs(districtQuery);
+        const districtDocs = districtSnap.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+        allDocs = [...allDocs, ...districtDocs];
+        
+        setRawHelplines(allDocs);
       } catch (err) {
         console.error("Error fetching helplines:", err);
         setRawHelplines([]);
@@ -104,7 +121,7 @@ const HelplineNumbers = () => {
       {/* Helpline list */}
       {loadingHelplines ? (
         <p className="text-sm text-gray-600">{t('loading')}</p>
-      ) : helplines.length === 0 && selectedDistrict ? (
+      ) : helplines.length === 0 ? (
         <p className="text-sm text-gray-600">{t('noHelplinesFound')}</p>
       ) : (
         <ul className="space-y-3">
