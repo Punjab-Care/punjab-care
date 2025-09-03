@@ -1,6 +1,6 @@
 # Punjab Flood Relief Mobile Web App
 
-A mobile-first web application built with React, Tailwind CSS, and Firebase to help coordinate flood relief efforts in Punjab.
+A mobile-first web application built with React, Tailwind CSS,JavaScript and Firebase to help coordinate flood relief efforts in Punjab.
 
 ## Features
 
@@ -116,24 +116,6 @@ The app will be available at `http://localhost:5173`
 npm run build
 ```
 
-## Project Structure
-
-```
-src/
-├── components/
-│   ├── RequestHelpForm.jsx      # Help request form
-│   ├── HelplineNumbers.jsx      # Helpline display
-│   ├── ViewRequests.jsx         # All requests view
-│   └── MyRequests.jsx           # User's requests
-├── contexts/
-│   └── LanguageContext.jsx      # Language management
-├── utils/
-│   └── session.js               # Session utilities
-├── firebase.js                  # Firebase configuration
-├── App.jsx                      # Main app component
-└── main.jsx                     # App entry point
-```
-
 ## Features in Detail
 
 ### Language Toggle
@@ -162,7 +144,7 @@ src/
 
 ### My Requests
 - Shows only current session's requests
-- Status indicators (Pending, Approved, Completed, Rejected)
+- Status indicators (Pending, Completed)
 - Expandable details view
 
 ## Mobile-First Design
@@ -187,9 +169,6 @@ src/
 4. Test thoroughly
 5. Submit a pull request
 
-## License
-
-This project is licensed under the ISC License.
 
 ## Support
 
