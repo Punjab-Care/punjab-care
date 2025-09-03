@@ -1,19 +1,467 @@
 [
-    {
-    "district": "Fazilka",
-    "orgName": "Sarvhitkari Charitable & Welfare Society",
-    "contact": "Emergency Flood Relief: 01638-262153; Address: Near Bala Ji Market, Abohar Road, Fazilka, Punjab – 152117; Phone: ‪+91 98147 54949‬; Areas active: Ferozepur & Fazilka",
+  {
+    "district": "Sri Amritsar",
+    "orgName": "Jolly Dairy Farm, Sohiyan Kalan, Fatehgarh Churian Road",
+    "contact": ["9815258000", "9814711118"],
     "language": {
       "en": {
-        "orgName": "Sarvhitkari Charitable & Welfare Society",
-        "district": "Fazilka"
+        "orgName": "Jolly Dairy Farm, Sohiyan Kalan, Fatehgarh Churian Road",
+        "district": "Amritsar"
       },
       "pa": {
-        "orgName": "ਸਰਵਹਿਤਕਾਰੀ ਚੈਰੀਟੇਬਲ ਅਤੇ ਵੈਲਫ਼ੇਅਰ ਸੋਸਾਇਟੀ",
-        "district": "ਫ਼ਾਜ਼ਿਲਕਾ"
+        "orgName": "ਜੌਲੀ ਫਾਰਮ, ਸੋਹੀਆਂ ਕਲਾਂ, ਫਤਿਹਗੜ੍ਹ ਚੂੜੀਆਂ ਰੋਡ",
+        "district": "ਅੰਮ੍ਰਿਤਸਰ"
       }
     },
     "isStateWide": false
-    }
-
+  },
+  {
+    "district": "Malerkotla",
+    "orgName": "Flood Control Room",
+    "contact": ["01675-252003"],
+    "language": {
+      "en": {
+        "orgName": "Flood Control Room",
+        "district": "Malerkotla"
+      },
+      "pa": {
+        "orgName": "ਫਲੱਡ ਕੰਟਰੋਲ ਰੂਮ",
+        "district": "ਮਲੇਰਕੋਟਲਾ"
+      }
+    },
+    "isStateWide": false
+  },
+  {
+    "district": "Punjab",
+    "orgName": "Aashray Foundation",
+    "contact": ["9815151895"],
+    "language": {
+      "en": {
+        "orgName": "Aashray Foundation",
+        "district": "Punjab"
+      },
+      "pa": {
+        "orgName": "ਆਸਰੇ ਫਾਊਂਡੇਸ਼ਨ",
+        "district": "ਪੰਜਾਬ"
+      }
+    },
+    "isStateWide": true
+  },
+  {
+    "district": "Punjab",
+    "orgName": "Hemkunt Foundation",
+    "contact": ["@hemkunt_foundation"],
+    "language": {
+      "en": {
+        "orgName": "Hemkunt Foundation",
+        "district": "Punjab"
+      },
+      "pa": {
+        "orgName": "ਹੇਮਕੁੰਟ ਫਾਊਂਡੇਸ਼ਨ",
+        "district": "ਪੰਜਾਬ"
+      }
+    },
+    "isStateWide": true
+  },
+  {
+    "district": "Amritsar",
+    "orgName": "SACHKHAND FOUNDATION",
+    "contact": ["08287007747"],
+    "language": {
+      "en": {
+        "orgName": "SACHKHAND FOUNDATION",
+        "district": "Amritsar"
+      },
+      "pa": {
+        "orgName": "ਸਚਖੰਡ ਫਾਊਂਡੇਸ਼ਨ",
+        "district": "ਅੰਮ੍ਰਿਤਸਰ"
+      }
+    },
+    "isStateWide": false
+  },
+  {
+    "district": "Amritsar",
+    "orgName": "Bhai Ghanaiya Ji Care Service",
+    "contact": ["98140-55166"],
+    "language": {
+      "en": {
+        "orgName": "Bhai Ghanaiya Ji Care Service",
+        "district": "Amritsar"
+      },
+      "pa": {
+        "orgName": "ਭਾਈ ਘਣਈਆ ਜੀ ਕੇਅਰ ਸਰਵਿਸ",
+        "district": "ਅੰਮ੍ਰਿਤਸਰ"
+      }
+    },
+    "isStateWide": false
+  },
+  {
+    "district": "Amritsar",
+    "orgName": "All India Pingalwara Charitable Society",
+    "contact": ["0183-2584586"],
+    "language": {
+      "en": {
+        "orgName": "All India Pingalwara Charitable Society",
+        "district": "Amritsar"
+      },
+      "pa": {
+        "orgName": "ਆਲ ਇੰਡੀਆ ਪਿੰਗਲਵਾੜਾ ਚੈਰੀਟੇਬਲ ਸੋਸਾਇਟੀ",
+        "district": "ਅੰਮ੍ਰਿਤਸਰ"
+      }
+    },
+    "isStateWide": false
+  },
+  {
+    "district": "Punjab",
+    "orgName": "Association for Social Health (ASHI)",
+    "contact": ["91-11-23233428", "23232209"],
+    "language": {
+      "en": {
+        "orgName": "Association for Social Health (ASHI)",
+        "district": "Punjab"
+      },
+      "pa": {
+        "orgName": "ਐਸੋਸੀਏਸ਼ਨ ਫਾਰ ਸੋਸ਼ਲ ਹੈਲਥ (ASHI)",
+        "district": "ਪੰਜਾਬ"
+      }
+    },
+    "isStateWide": true
+  },
+  {
+    "district": "Amritsar",
+    "orgName": "Sanjhi Sehat",
+    "contact": ["sanjhisehatorg@gmail.com", "+91-9814860540"],
+    "language": {
+      "en": {
+        "orgName": "Sanjhi Sehat",
+        "district": "Amritsar"
+      },
+      "pa": {
+        "orgName": "ਸਾਂਝੀ ਸਿਹਤ",
+        "district": "ਅੰਮ੍ਰਿਤਸਰ"
+      }
+    },
+    "isStateWide": false
+  },
+  {
+    "district": "Punjab",
+    "orgName": "The Kalgidhar Society",
+    "contact": ["98713 12313", "9403890012"],
+    "language": {
+      "en": {
+        "orgName": "The Kalgidhar Society",
+        "district": "Punjab"
+      },
+      "pa": {
+        "orgName": "ਦਿ ਕਾਲਗਿਧਰ ਸੋਸਾਇਟੀ",
+        "district": "ਪੰਜਾਬ"
+      }
+    },
+    "isStateWide": true
+  },
+  {
+    "district": "Ludhiana",
+    "orgName": "Nishkam Sewa Ashram",
+    "contact": ["nishkamsewa.com", "91-9855532501", "7901719451"],
+    "language": {
+      "en": {
+        "orgName": "Nishkam Sewa Ashram",
+        "district": "Ludhiana"
+      },
+      "pa": {
+        "orgName": "ਨਿਸ਼ਕਾਮ ਸੇਵਾ ਆਸ਼ਰਮ",
+        "district": "ਲੁਧਿਆਣਾ"
+      }
+    },
+    "isStateWide": false
+  },
+  {
+    "district": "Punjab",
+    "orgName": "Care India",
+    "contact": ["www.careindia.org"],
+    "language": {
+      "en": {
+        "orgName": "Care India",
+        "district": "Punjab"
+      },
+      "pa": {
+        "orgName": "ਕੇਅਰ ਇੰਡੀਆ",
+        "district": "ਪੰਜਾਬ"
+      }
+    },
+    "isStateWide": true
+  },
+  {
+    "district": "Punjab",
+    "orgName": "Sun Foundation",
+    "contact": ["89850-96111", "89850-96777", "89850-96888"],
+    "language": {
+      "en": {
+        "orgName": "Sun Foundation",
+        "district": "Punjab"
+      },
+      "pa": {
+        "orgName": "ਸਨ ਫਾਊਂਡੇਸ਼ਨ",
+        "district": "ਪੰਜਾਬ"
+      }
+    },
+    "isStateWide": true
+  },
+  {
+    "district": "Ropar",
+    "orgName": "Sri Keshgarh Sahib Sri Anandpur Sahib",
+    "contact": "84370-08002",
+    "language": {
+      "en": {
+        "orgName": "Sri Keshgarh Sahib Sri Anandpur Sahib",
+        "district": "Ropar"
+      },
+      "pa": {
+        "orgName": "ਸ਼੍ਰੀ ਕੇਸਗੜ੍ਹ ਸਾਹਿਬ ਸ਼੍ਰੀ ਅਨੰਦਪੁਰ ਸਾਹਿਬ",
+        "district": "ਰੋਪੜ"
+      }
+    },
+    "isStateWide": false
+  },
+  {
+    "district": "Patiala",
+    "orgName": "Sri Dukhniwaran Sahib Patiala",
+    "contact": "84370-08007",
+    "language": {
+      "en": {
+        "orgName": "Sri Dukhniwaran Sahib Patiala",
+        "district": "Patiala"
+      },
+      "pa": {
+        "orgName": "ਸ਼੍ਰੀ ਦੁਖਨਿਵਾਰਨ ਸਾਹਿਬ ਪਟਿਆਲਾ",
+        "district": "ਪਟਿਆਲਾ"
+      }
+    },
+    "isStateWide": false
+  },
+  {
+    "district": "Kapurthala",
+    "orgName": "Sri Ber Sahib Sultanpur Lodhi",
+    "contact": "84370-08011",
+    "language": {
+      "en": {
+        "orgName": "Sri Ber Sahib Sultanpur Lodhi",
+        "district": "Kapurthala"
+      },
+      "pa": {
+        "orgName": "ਸ਼੍ਰੀ ਬੇਰ ਸਾਹਿਬ ਸਲਤਨਪੁਰ ਲੋਧੀ",
+        "district": "ਕਪੂਰਥਲਾ"
+      }
+    },
+    "isStateWide": false
+  },
+  {
+    "district": "Amritsar",
+    "orgName": "Patharwali Noni, Baba Bakala",
+    "contact": "84370-08016",
+    "language": {
+      "en": {
+        "orgName": "Patharwali Noni, Baba Bakala",
+        "district": "Amritsar"
+      },
+      "pa": {
+        "orgName": "ਪੱਥਰਵਾਲੀ ਨੋਨੀ ਬਾਬਾ ਬਕਾਲਾ",
+        "district": "ਅੰਮ੍ਰਿਤਸਰ"
+      }
+    },
+    "isStateWide": false
+  },
+  {
+    "district": "Tarn Taran",
+    "orgName": "Sri Bauli Sahib Goindwal",
+    "contact": "84370-08017",
+    "language": {
+      "en": {
+        "orgName": "Sri Bauli Sahib Goindwal",
+        "district": "Tarn Taran"
+      },
+      "pa": {
+        "orgName": "ਸ਼੍ਰੀ ਬਾਉਲੀ ਸਾਹਿਬ ਗੋਇੰਦਵਾਲ",
+        "district": "ਤਰਨ ਤਾਰਨ"
+      }
+    },
+    "isStateWide": false
+  },
+  {
+    "district": "Amritsar",
+    "orgName": "Baba Budha Sahib Ji, Ramdas",
+    "contact": "84370-08023",
+    "language": {
+      "en": {
+        "orgName": "Baba Budha Sahib Ji, Ramdas",
+        "district": "Amritsar"
+      },
+      "pa": {
+        "orgName": "ਬਾਬਾ ਬੁੱਢਾ ਸਾਹਿਬ ਜੀ ਰਮਦਾਸ",
+        "district": "ਅੰਮ੍ਰਿਤਸਰ"
+      }
+    },
+    "isStateWide": false
+  },
+  {
+    "district": "Ropar",
+    "orgName": "Bhora Sahib Patshahi Dasvin, Kotla Nihang",
+    "contact": "84370-08024",
+    "language": {
+      "en": {
+        "orgName": "Bhora Sahib Patshahi Dasvin, Kotla Nihang",
+        "district": "Ropar"
+      },
+      "pa": {
+        "orgName": "ਭੋੜਾ ਸਾਹਿਬ ਪਾਤਸ਼ਾਹੀ ਦਸਵੀਂ ਕੋਟਲਾ ਨਿਹੰਗ",
+        "district": "ਰੋਪੜ"
+      }
+    },
+    "isStateWide": false
+  },
+  {
+    "district": "Ropar",
+    "orgName": "Chamkaur Sahib",
+    "contact": "84370-08025",
+    "language": {
+      "en": {
+        "orgName": "Chamkaur Sahib",
+        "district": "Ropar"
+      },
+      "pa": {
+        "orgName": "ਚਮਕੌਰ ਸਾਹਿਬ",
+        "district": "ਰੋਪੜ"
+      }
+    },
+    "isStateWide": false
+  },
+  {
+    "district": "Ludhiana",
+    "orgName": "Sri Charan Kanwal Sahib, Machhiwara",
+    "contact": "84370-08026",
+    "language": {
+      "en": {
+        "orgName": "Sri Charan Kanwal Sahib, Machhiwara",
+        "district": "Ludhiana"
+      },
+      "pa": {
+        "orgName": "ਸ਼੍ਰੀ ਚਰਨਕੰਵਲ ਸਾਹਿਬ ਮਾਚੀਵਾੜਾ",
+        "district": "ਲੁਧਿਆਣਾ"
+      }
+    },
+    "isStateWide": false
+  },
+  {
+    "district": "Pathankot",
+    "orgName": "Sri Barth Sahib",
+    "contact": "84370-08028",
+    "language": {
+      "en": {
+        "orgName": "Sri Barth Sahib",
+        "district": "Pathankot"
+      },
+      "pa": {
+        "orgName": "ਸ਼੍ਰੀ ਬਾਰਥ ਸਾਹਿਬ",
+        "district": "ਪਠਾਨਕੋਟ"
+      }
+    },
+    "isStateWide": false
+  },
+  {
+    "district": "Firozpur",
+    "orgName": "Guru Ki Jamini Sahib Patshahi Dasvin, Bhagta Bhai Ka",
+    "contact": "84370-08038",
+    "language": {
+      "en": {
+        "orgName": "Guru Ki Jamini Sahib Patshahi Dasvin, Bhagta Bhai Ka",
+        "district": "Firozpur"
+      },
+      "pa": {
+        "orgName": "ਗੁਰੂ ਕੀ ਜਮਨੀ ਸਾਹਿਬ ਪਾਤਸ਼ਾਹੀ ਦਸਵੀਂ ਭਗਤਾ ਭਾਈ ਕਾ",
+        "district": "ਫਿਰੋਜ਼ਪੁਰ"
+      }
+    },
+    "isStateWide": false
+  },
+  {
+    "district": "Gurdaspur",
+    "orgName": "Sri Dera Baba Nanak Sahib",
+    "contact": "84370-08045",
+    "language": {
+      "en": {
+        "orgName": "Sri Dera Baba Nanak Sahib",
+        "district": "Gurdaspur"
+      },
+      "pa": {
+        "orgName": "ਸ਼੍ਰੀ ਡੇਰਾ ਬਾਬਾ ਨਾਨਕ ਸਾਹਿਬ",
+        "district": "ਗੁਰਦਾਸਪੁਰ"
+      }
+    },
+    "isStateWide": false
+  },
+  {
+    "district": "Tarn Taran",
+    "orgName": "Baba Bir Singh Ji, Rattewal",
+    "contact": "84370-08055",
+    "language": {
+      "en": {
+        "orgName": "Baba Bir Singh Ji, Rattewal",
+        "district": "Tarn Taran"
+      },
+      "pa": {
+        "orgName": "ਬਾਬਾ ਬੀਰ ਸਿੰਘ ਜੀ ਰੱਤੇਵਾਲ",
+        "district": "ਤਰਨ ਤਾਰਨ"
+      }
+    },
+    "isStateWide": false
+  },
+  {
+    "district": "Tarn Taran",
+    "orgName": "Patshahi Panjvin, Chola Sahib",
+    "contact": "84370-08060",
+    "language": {
+      "en": {
+        "orgName": "Patshahi Panjvin, Chola Sahib",
+        "district": "Tarn Taran"
+      },
+      "pa": {
+        "orgName": "ਪਾਤਸ਼ਾਹੀ ਪੰਜਵੀਂ ਚੋਲਾ ਸਾਹਿਬ",
+        "district": "ਤਰਨ ਤਾਰਨ"
+      }
+    },
+    "isStateWide": false
+  },
+  {
+    "district": "Tarn Taran",
+    "orgName": "Bhai Tara Singh Ji Shatrana",
+    "contact": "84370-08061",
+    "language": {
+      "en": {
+        "orgName": "Bhai Tara Singh Ji Shatrana",
+        "district": "Tarn Taran"
+      },
+      "pa": {
+        "orgName": "ਭਾਈ ਤਾਰਾ ਸਿੰਘ ਜੀ ਸ਼ਤਰਾਣਾ",
+        "district": "ਤਰਨ ਤਾਰਨ"
+      }
+    },
+    "isStateWide": false
+  },
+  {
+    "district": "Kapurthala",
+    "orgName": "Bhai Lalo Ji & Bhai Buli Ji, Bholewal",
+    "contact": "84370-08078",
+    "language": {
+      "en": {
+        "orgName": "Bhai Lalo Ji & Bhai Buli Ji, Bholewal",
+        "district": "Kapurthala"
+      },
+      "pa": {
+        "orgName": "ਭਾਈ ਲਾਲੋ ਜੀ ਅਤੇ ਭਾਈ ਬੂਲੀ ਜੀ ਭੋਲੇਵਾਲ",
+        "district": "ਕਪੂਰਥਲਾ"
+      }
+    },
+    "isStateWide": false
+  }
 ]
+

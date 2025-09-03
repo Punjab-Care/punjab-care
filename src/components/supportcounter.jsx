@@ -6,7 +6,7 @@ export default function SupportCounter() {
   const [likes, setLikes] = useState(0); // Start with 0 instead of null
   const [hasSupported, setHasSupported] = useState(false);
   const [loading, setLoading] = useState(true);
-  const totalGoal = 1000;
+  const totalGoal = 100;
 
   const counterDocRef = useMemo(() => doc(db, "counter", "likes"), []);
 
