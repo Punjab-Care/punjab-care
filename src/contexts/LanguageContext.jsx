@@ -110,6 +110,19 @@ const translations = {
       "Service temporarily unavailable. Please try again later.",
     unauthenticated: "Authentication required. Please refresh the page.",
 
+    // NGO Partnership Section
+    ngoPartnership: {
+      heading: "We Need Your Help",
+      subtext: "We're connecting with NGOs and helping groups to reach those in need faster and more effectively. Your support matters — share this initiative to help us reach more lives.",
+      partnerButton: "Partner with Us",
+      shareButton: "Share Now",
+      typingLines: [
+        "Connecting with NGOs & helping groups...",
+        "Reaching those in need faster & better...",
+        "Your support matters — share this initiative!"
+      ]
+    },
+
     // Messages
     requestSubmitted: "Request submitted successfully",
     errorSubmitting: "Error submitting request",
@@ -194,6 +207,19 @@ const translations = {
       emergencyTransport: "ਐਮਰਜੈਂਸੀ ਟ੍ਰਾਂਸਪੋਰਟ ਸਬੰਧਿਤ",
       mosquitoNetTarpaulin: "ਮੱਛਰਦਾਨੀ /  ਤਾਰਪੌਲਿਨ",
       animalFeedMedicine: "ਪਸ਼ੂਆਂ ਲਈ ਨਿਰਾ ਅਤੇ ਦਵਾਈਆਂ",
+    },
+
+    // NGO Partnership Section
+    ngoPartnership: {
+      heading: "ਸਾਨੂੰ ਤੁਹਾਡੀ ਮਦਦ ਦੀ ਲੋੜ ਹੈ",
+      subtext: "ਅਸੀਂ ਐਨਜੀਓ ਅਤੇ ਮਦਦਗਾਰ ਗਰੁੱਪਾਂ ਨਾਲ ਜੁੜ ਰਹੇ ਹਾਂ ਤਾਂ ਜੋ ਲੋੜਵੰਦਾਂ ਤੱਕ ਤੇਜ਼ੀ ਨਾਲ ਅਤੇ ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਢੰਗ ਨਾਲ ਪਹੁੰਚ ਸਕੀਏ। ਤੁਹਾਡਾ ਸਹਿਯੋਗ ਮਹੱਤਵਪੂਰਨ ਹੈ — ਇਸ ਪਹਲ ਨੂੰ ਸ਼ੇਅਰ ਕਰੋ ਤਾਂ ਜੋ ਹੋਰ ਜ਼ਿੰਦਗੀਆਂ ਤੱਕ ਪਹੁੰਚਿਆ ਜਾ ਸਕੇ।",
+      partnerButton: "ਸਾਡੇ ਨਾਲ ਸਾਂਝੇਦਾਰੀ ਕਰੋ",
+      shareButton: "ਹੁਣ ਸ਼ੇਅਰ ਕਰੋ",
+      typingLines: [
+        "ਐਨਜੀਓ ਅਤੇ ਮਦਦਗਾਰ ਗਰੁੱਪਾਂ ਨਾਲ ਜੁੜ ਰਹੇ ਹਾਂ...",
+        "ਲੋੜਵੰਦਾਂ ਤੱਕ ਤੇਜ਼ੀ ਨਾਲ ਪਹੁੰਚ ਰਹੇ ਹਾਂ...",
+        "ਤੁਹਾਡਾ ਸਹਿਯੋਗ ਮਹੱਤਵਪੂਰਨ ਹੈ — ਇਸ ਪਹਲ ਨੂੰ ਸ਼ੇਅਰ ਕਰੋ!"
+      ]
     },
 
     // About Us
