@@ -4,6 +4,7 @@ import { collection, getDocs } from 'firebase/firestore';
 import { useEffect } from 'react';
 import Footer from './Footer'
 import SupportCounter from './supportcounter'
+import NGOPartnership from './NGOPartnership'
 const HomePage = ({ onNavigate }) => {
   const { t, language, toggleLanguage } = useLanguage();
 
@@ -66,12 +67,17 @@ const HomePage = ({ onNavigate }) => {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 flex flex-col justify-center px-4 py-8">
+      <main className="flex-1 flex flex-col justify-center px-4 py-8 min-h-[calc(100vh-120px)]">
         <div className="max-w-md mx-auto w-full">
           {/* Welcome Section */}
           <div className="text-center mb-8">
-           
-            <div className="text-4xl mb-4">🏠</div>
+            <div className="mb-4 flex justify-center">
+              <img 
+                src="/assets/punjabcare.svg" 
+                alt="Punjab Care Logo" 
+                className="h-16 w-auto"
+              />
+            </div>
             <h2 className="text-2xl font-bold text-gray-900 mb-2">
               {t('welcome')}
             </h2>
@@ -113,6 +119,9 @@ const HomePage = ({ onNavigate }) => {
               {t('emergencyMessage')}
             </p>
           </div>
+
+          {/* NGO Partnership Section */}
+          <NGOPartnership />
 
           <div className="mb-4 flex justify-center">
               <SupportCounter />

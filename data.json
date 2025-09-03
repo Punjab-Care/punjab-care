@@ -111,22 +111,7 @@
     },
     "isStateWide": false
   },
-  {
-    "district": "Punjab",
-    "orgName": "Association for Social Health (ASHI)",
-    "contact": ["91-11-23233428", "23232209"],
-    "language": {
-      "en": {
-        "orgName": "Association for Social Health (ASHI)",
-        "district": "Punjab"
-      },
-      "pa": {
-        "orgName": "ਐਸੋਸੀਏਸ਼ਨ ਫਾਰ ਸੋਸ਼ਲ ਹੈਲਥ (ASHI)",
-        "district": "ਪੰਜਾਬ"
-      }
-    },
-    "isStateWide": true
-  },
+
   {
     "district": "Amritsar",
     "orgName": "Sanjhi Sehat",
