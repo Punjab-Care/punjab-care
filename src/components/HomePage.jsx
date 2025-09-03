@@ -3,6 +3,7 @@ import { db } from '../firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import { useEffect } from 'react';
 import Footer from './Footer'
+import SupportCounter from './supportcounter'
 const HomePage = ({ onNavigate }) => {
   const { t, language, toggleLanguage } = useLanguage();
 
@@ -69,6 +70,7 @@ const HomePage = ({ onNavigate }) => {
         <div className="max-w-md mx-auto w-full">
           {/* Welcome Section */}
           <div className="text-center mb-8">
+           
             <div className="text-4xl mb-4">🏠</div>
             <h2 className="text-2xl font-bold text-gray-900 mb-2">
               {t('welcome')}
@@ -111,6 +113,10 @@ const HomePage = ({ onNavigate }) => {
               {t('emergencyMessage')}
             </p>
           </div>
+
+          <div className="mb-4 flex justify-center">
+              <SupportCounter />
+            </div>
 
           {/* Footer */}
           <div className="mt-5 text-center text-gray-500 text-xl">
