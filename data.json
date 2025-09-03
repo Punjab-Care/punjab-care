@@ -2,7 +2,7 @@
   {
     "district": "Sri Amritsar",
     "orgName": "Jolly Dairy Farm, Sohiyan Kalan, Fatehgarh Churian Road",
-    "contact": ["9815258000", "9814711118"],
+    "contact": ["9815258000, ", "9814711118"],
     "language": {
       "en": {
         "orgName": "Jolly Dairy Farm, Sohiyan Kalan, Fatehgarh Churian Road",
@@ -115,7 +115,7 @@
   {
     "district": "Amritsar",
     "orgName": "Sanjhi Sehat",
-    "contact": ["sanjhisehatorg@gmail.com", "+91-9814860540"],
+    "contact": ["sanjhisehatorg@gmail.com,  ", "+91-9814860540"],
     "language": {
       "en": {
         "orgName": "Sanjhi Sehat",
@@ -131,7 +131,7 @@
   {
     "district": "Punjab",
     "orgName": "The Kalgidhar Society",
-    "contact": ["98713 12313", "9403890012"],
+    "contact": ["98713 12313,  ","9403890012"],
     "language": {
       "en": {
         "orgName": "The Kalgidhar Society",
@@ -147,7 +147,7 @@
   {
     "district": "Ludhiana",
     "orgName": "Nishkam Sewa Ashram",
-    "contact": ["nishkamsewa.com", "91-9855532501", "7901719451"],
+    "contact": ["nishkamsewa.com,  ", "91-9855532501,  ", "7901719451"],
     "language": {
       "en": {
         "orgName": "Nishkam Sewa Ashram",
@@ -179,7 +179,7 @@
   {
     "district": "Punjab",
     "orgName": "Sun Foundation",
-    "contact": ["89850-96111", "89850-96777", "89850-96888"],
+    "contact": ["89850-96111,  ", "89850-96777,  ", "89850-96888"],
     "language": {
       "en": {
         "orgName": "Sun Foundation",
@@ -447,6 +447,67 @@
       }
     },
     "isStateWide": false
-  }
+  }, {
+  "district": "Punjab",
+  "orgName": "Initiators of India",
+  "contact": "8847410344",
+  "language": {
+    "en": {
+      "orgName": "Initiators of India",
+      "district": "Punjab"
+    },
+    "pa": {
+      "orgName": "ਇਨੀਸ਼ੀਏਟਰਸ ਆਫ ਇੰਡੀਆ",
+      "district": "ਪੰਜਾਬ"
+    }
+  },
+  "isStateWide": true
+}, 
+{
+  "district": "Punjab",
+  "orgName": "Ek Zaria Foundation",
+  "contact": "9688000074",
+  "language": {
+    "en": {
+      "orgName": "Ek Zaria Foundation",
+      "district": "Punjab"
+    },
+    "pa": {
+      "orgName": "ਇੱਕ ਜ਼ਰਿਆ ਫਾਊਂਡੇਸ਼ਨ",
+      "district": "ਪੰਜਾਬ"
+    }
+  },
+  "isStateWide": true
+}, {
+  "district": "Tarn Taran",
+  "orgName": "Nirbhau Life Saviours",
+  "contact": "9915760007",
+  "language": {
+    "en": {
+      "orgName": "Nirbhau Life Saviours",
+      "district": "Tarn Taran"
+    },
+    "pa": {
+      "orgName": "ਨਿਰਭਉ ਲਾਈਫ ਸੇਵਿਯਰਸ",
+      "district": "ਤਰਨ ਤਾਰਨ"
+    }
+  },
+  "isStateWide": false
+},{
+  "district": "Punjab",
+  "orgName": "Global Sikhs",
+  "contact": ["91453-92453"],
+  "language": {
+    "en": {
+      "orgName": "Global Sikhs",
+      "district": "Punjab"
+    },
+    "pa": {
+      "orgName": "ਗਲੋਬਲ ਸਿੱਖ",
+      "district": "ਪੰਜਾਬ"
+    }
+  },
+  "isStateWide": true
+}
 ]
 
