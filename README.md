@@ -1,4 +1,4 @@
-[Punjab Care:](https://punjabcare.org/)
+Live platform : [Punjab Care.org:](https://punjabcare.org/)
 #Punjab Care: A flood relief Mobile web app
 #Started this intiative to support my homeland during flood situation in punjab. During difficult times, the platform's goal was  to connect flood affected people with essential resources(food, shelter, medicine etc), assistance by connecting them with NGOs and helping communities. and to share timely information to make help more accessible.
 
